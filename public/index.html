@@ -1,0 +1,131 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Follow</title>
+<meta name="description" content="TakipBiz">
+<meta name="author" content="adierebel">
+<link rel="stylesheet" href="assets/css/reset.css?v=1.0">
+<link rel="stylesheet" href="assets/css/style.css?v=1.0">
+<script type="text/javascript" src="words.js"></script>
+<script type="text/javascript" src="msg.js"></script>
+<script type="text/javascript" src="assets/tts/speakClient.js"></script>
+<script type="text/javascript" src="assets/js/jquery.js"></script>
+<script type="text/javascript" src="assets/js/socket.io.js"></script>
+<script type="text/javascript" src="assets/js/connection.js"></script>
+<script type="text/javascript" src="assets/js/app.js"></script>
+<style>
+
+</style>
+</head>
+
+
+  <audio id="sfx1" class="d-block">
+    <source src="../assets/sounds/siu.mp3" preload="auto" type="audio/mpeg">
+  </audio>
+  <audio id="sfx2" class="d-block">
+    <source src="../assets/sounds/wee.mp3" preload="auto" type="audio/mpeg">
+  </audio>
+  <audio id="sfx3" class="d-block">
+    <source src="../assets/sounds/augh.mp3" preload="auto" type="audio/mpeg">
+  </audio>
+  <audio id="sfx4" class="d-block">
+    <source src="../assets/sounds/habibi.mp3" preload="auto" type="audio/mpeg">
+  </audio>
+  <audio id="sfx5" class="d-block">
+    <source src="../assets/sounds/scream.mp3" preload="auto" type="audio/mpeg">
+  </audio>
+  <script>
+// DATA
+
+var soundQueue = []; // Array to store the sound queue
+let connection = new TikTokIOConnection(undefined);
+let finishGame = false;
+let iconList = [];
+let nextId = 1;
+let winner = [];
+let animationID;
+// START
+$(document).ready(() => {
+    setTimeout(function () {
+        let targetLive = "oyun_aze";
+        connect(targetLive);
+    }, 5000);
+
+})
+
+function playSound(mode) {
+    var audioElement = document.getElementById("sfx" + mode);
+    
+    // Eğer başka bir ses zaten çalıyorsa, şimdiki sesi kuyruğa ekleyin
+    if (!audioElement.paused) {
+        soundQueue.push(mode);
+    } else {
+        audioElement.play(); // Şimdiki sesi çal
+        
+        audioElement.onended = function() {
+            // Sesi çalmayı bitirdikten sonra, kuyrukta ses olup olmadığını kontrol et
+            if (soundQueue.length > 0) {
+                var nextSound = soundQueue.shift(); // Kuyruktan bir sonraki sesi al
+                playSound(nextSound); // Bir sonraki sesi recursive olarak çal
+            }
+        };
+    }
+}
+
+
+function connect(targetLive) {
+    if (targetLive !== '') {
+        $('#stateText').text('Qoşulur...');
+        $("#usernameTarget").html("@" + targetLive);
+        connection.connect(targetLive, {
+            enableExtendedGiftInfo: true
+        }).then(state => {
+            $('#stateText').text(`Xoş gəldin... ${state.roomId}`);
+        }).catch(errorMessage => {
+            $('#stateText').text(errorMessage);
+        })
+    } else {
+        alert('İstifadəçi adını daxil et');
+    }
+}
+
+
+// // New gift received
+connection.on('gift', (data) => {
+    let giftCount;
+    giftCount = (data.diamondCount * data.repeatCount);
+
+    for (let i = 0; i < giftCount; i++) {
+        if (data.giftId === 5269) {
+            playSound(1);
+        }
+
+        if (data.giftId === 5655) {
+            playSound(2);
+        }
+
+        if (data.giftId === 7591) {
+            playSound(3);
+        }
+
+        if (data.giftId === 6104) {
+            playSound(4);
+        }
+
+        if (data.giftId === 5509) {
+            playSound(5);
+        }
+    }
+})
+
+
+function isPendingStreak(data) {
+    return data.giftType === 1 && !data.repeatEnd;
+}
+
+// End
+connection.on('streamEnd', () => {
+    $('#stateText').text('Canlı sona çatdı.');
+})
+  </script>
+</body>
+
+</html>
