@@ -25,9 +25,18 @@ function playSound(mode) {
     audioElement.play();
 
     audioElement.onended = function () {
-        if (soundQueue.length > 0) {
-            var nextSound = soundQueue.shift();
-            playSound(nextSound);
+        // Check if any sound is currently playing
+        let isPlaying = false;
+        for (let i = 1; i <= 5; i++) {
+            if (!document.getElementById("sfx" + i).paused) {
+                isPlaying = true;
+                break;
+            }
+        }
+
+        // If no sound is currently playing, start the next sound
+        if (!isPlaying && soundQueue.length > 0) {
+            playSound(soundQueue.shift());
         }
     };
 }
@@ -76,6 +85,7 @@ connection.on('gift', (data) => {
 
             if (data.giftId === 5658) {
                 soundQueue.push(3);
+                console.log("aaaaaaaaaaaaaaaaaaaaaaa")
             }
 
             if (data.giftId === 6104) {
