@@ -327,7 +327,7 @@ window.addEventListener("load", async () => {
 });
 
 
-// setInterval(addRandomMessage, 20000);
+setInterval(addRandomMessage, 20000);
 
 
 
