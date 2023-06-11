@@ -69,9 +69,6 @@ connection.on('gift', (data) => {
             if (data.giftId === 5269) {
                 soundQueue.push(1);
             }
-                if (data.giftId === 6093) {
-                soundQueue.push(1);
-            }
 
             if (data.giftId === 5655) {
                 soundQueue.push(2);
@@ -107,7 +104,7 @@ connection.on('gift', (data) => {
 
         const messages = [
             { text: " adlı hesaba her kes takip atsın", language: "tr" },
-            { text: "Teşekkür ederim, hediye için!", language: "tr" },
+            { text: "Teşekkür ederim", language: "tr" },
             { text: "Kendini gösteriyor, onu takip edin", language: "tr" },
             { text: "Harikasın, toplu takip gönderin", language: "tr" },
             { text: "Kesene bereket", language: "tr" },
@@ -204,12 +201,11 @@ function addRandomMessage() {
         { text: "Canlını beğenen her kese takip gönderin", language: "tr" },
         { text: "Arkadaşlarını davet eden her kese takip gönderin", language: "tr" },
 
-        { text: "Beğeni ve hediye gönderenleri takip et", language: "tr" },
+
         { text: "Canlını paylaş", language: "tr" },
         { text: "Yorum yaz, karşılığında takip ederim", language: "tr" },
         { text: "Bir birinize takip gönderin", language: "tr" },
         { text: "Arkadaşlarını davet eden her kese takip gönderin", language: "tr" },
-        { text: "Resimdeki hediyeni gönderdiğinde seslendirilyor", language: "tr" },
 
         { text: "Harikasınız", language: "tr" },
         { text: "Birlikte büyüyelim, beğen ve takip et", language: "tr" },
@@ -223,7 +219,6 @@ function addRandomMessage() {
         { text: "Canlını beğenen her kese takip gönderin", language: "tr" },
         { text: "Yayımı paylaşanlara takip gönderin", language: "tr" },
         { text: "Arkadaşlarını davet eden her kese takip gönderin", language: "tr" },
-        { text: "Resimdeki hediyeni gönderdiğinde seslendirilyor", language: "tr" },
 
         { text: "Müthişsiniz, teşekkürler", language: "tr" },
         { text: "Pozitif enerjiyi sürdür, beğen ve takip et", language: "tr" },
@@ -238,7 +233,6 @@ function addRandomMessage() {
         { text: "Birlikte güçlüyüz", language: "tr" },
         { text: "Yayımı paylaşanlara takip gönderin", language: "tr" },
         { text: "Arkadaşlarını davet eden her kese takip gönderin", language: "tr" },
-        { text: "Resimdeki hediyeni gönderdiğinde seslendirilyor", language: "tr" },
 
         { text: "Beğeni bırak, takipçi kazan", language: "tr" },
         { text: "Harika işler çıkarmaya devam edin, teşekkürler", language: "tr" },
@@ -249,7 +243,6 @@ function addRandomMessage() {
         { text: "Canlını beğenen her kese takip gönderin", language: "tr" },
         { text: "Yayımı paylaşanlara takip gönderin", language: "tr" },
         { text: "Arkadaşlarını davet eden her kese takip gönderin", language: "tr" },
-        { text: "Resimdeki hediyeni gönderdiğinde seslendirilyor", language: "tr" },
 
         { text: "Sohbete katıl, yorum yap ve takip et", language: "tr" },
         { text: "Yeni fikirler keşfet, takip et ve paylaş", language: "tr" },
@@ -261,22 +254,18 @@ function addRandomMessage() {
         { text: "Canlını beğenen her kese takip gönderin", language: "tr" },
         { text: "Yayımı paylaşanlara takip gönderin", language: "tr" },
         { text: "Arkadaşlarını davet eden her kese takip gönderin", language: "tr" },
-        { text: "Resimdeki hediyeni gönderdiğinde seslendirilyor", language: "tr" },
 
         { text: "Karşılıklı destek için beğen ve yorum yap", language: "tr" },
         { text: "Pozitif bir topluluk oluştur, takip et ve etkileşime gir", language: "tr" },
         { text: "Desteğiniz için teşekkür ederiz", language: "tr" },
-        { text: "Hediye gönderdiğinde hesabını seslendiriyorum", language: "tr" },
         { text: "Lütfen yayımı beyenin", language: "tr" },
         { text: "Hesabımı takip eden son on kişiyi takip et", language: "tr" },
         { text: "Birlikte güçlüyüz", language: "tr" },
         { text: "Canlını beğenen her kese takip gönderin", language: "tr" },
         { text: "Yayımı paylaşanlara takip gönderin", language: "tr" },
         { text: "Arkadaşlarını davet eden her kese takip gönderin", language: "tr" },
-        { text: "Resimdeki hediyeni gönderdiğinde seslendirilyor", language: "tr" },
 
         { text: "Sandık koy daha çok takipçi kazan", language: "tr" },
-        { text: "Resimdeki hediyeni gönderdiğinde seslendirilyor", language: "tr" },
         { text: "Burada herkes takipçi kazanacak", language: "tr" },
         { text: "Mesaj yazanları takip edin", language: "tr" },
         { text: "Hesabımı takip eden son on kişiyi takip et", language: "tr" },
