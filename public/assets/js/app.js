@@ -1,6 +1,69 @@
-// DATA
+let soundQueue = [];
+let sounds = {};
+let soundCount = {};
+let maxQueueSizePerSound = 25;
 
-var soundQueue = []; // Array to store the sound queue
+let isPaused = false;
+
+function pauseAllSounds() {
+    isPaused = true;
+    for(let key in sounds) {
+        sounds[key].pause();
+    }
+    setTimeout(resumeAllSounds, 20000); // 20000 milliseconds = 20 seconds
+}
+
+function resumeAllSounds() {
+    isPaused = false;
+    if(soundQueue.length > 0) {
+        soundQueue[0].play();
+    }
+}
+
+
+window.onload = function() {
+    for(let i = 1; i <= 9; i++) {
+        let sound = document.getElementById(`sound${i}`);
+        sound.onended = playNextSound;
+        sounds[i] = sound;
+        soundCount[i] = 0;  // Initialize the count for each sound to 0
+    }
+};
+
+function playSpecificSound(id) {
+    if(isPaused) {
+        console.log("All sounds are paused. Wait until resume.");
+        return;
+    }
+    if(sounds[id]) {
+        if(soundCount[id] < maxQueueSizePerSound) {
+            soundQueue.push(sounds[id]);
+            soundCount[id]++;  // Increment the count for the specified sound
+            if(soundQueue.length === 1) {
+                soundQueue[0].play();
+            }
+        } else {
+            console.log(`Maximum queue size for sound ${id} reached.`);
+        }
+    } else {
+        console.log(`No sound with id ${id} exists.`);
+    }
+}
+
+function playNextSound() {
+    for (let id in soundCount) {
+        if (soundQueue[0] === sounds[id]) {
+            soundCount[id]--;  // Decrement the count for the sound that just finished playing
+        }
+    }
+    soundQueue.shift();
+    if(soundQueue.length > 0) {
+        soundQueue[0].play();
+    }
+}
+
+
+
 let connection = new TikTokIOConnection(undefined);
 let finishGame = false;
 let iconList = [];
@@ -68,42 +131,64 @@ connection.on('gift', (data) => {
     let userName = data.uniqueId;
 
     if (!isPendingStreak(data) && data.diamondCount > 0) {
-        let giftCount = data.diamondCount * data.repeatCount 
+        let giftCount = data.diamondCount * data.repeatCount
         for (let i = 0; i < giftCount; i++) {
+            //tiktok siu
             if (data.giftId === 5269) {
-                soundQueue.push(1);
-            }
-
+                // soundQueue.push(1);
+                playSpecificSound(1);
+            } 
+            //rose siu
             if (data.giftId === 5655) {
-                soundQueue.push(2);
+                // soundQueue.push(2);
+                playSpecificSound(2);
             }
 
-            if (data.giftId === 5658) {
-                soundQueue.push(3);
-                console.log("aaaaaaaaaaaaaaaaaaaaaaa")
+            // //top footbal 33
+            if (data.giftId === 6093) {
+                playSpecificSound(3);
+                // soundQueue.push(3);
             }
 
-            if (data.giftId === 6104) {
-                soundQueue.push(4);
+            // //qantel yaxsilar
+            if (data.giftId === 5760) {
+                // soundQueue.push(4);
+                playSpecificSound(4);
+            }
+            // //alov mujik
+            if (data.giftId === 5523 || data.giftId === 6793) {
+                // soundQueue.push(5);
+                playSpecificSound(5);
+            }
+            // //kalonka auye
+            if (data.giftId === 6042) {
+                // soundQueue.push(6);
+                playSpecificSound(6);
+            }
+            // //panda naxcivan
+            if (data.giftId === 37) {
+                // soundQueue.push(7);
+                playSpecificSound(7);
             }
 
-            if (data.giftId === 5509) {
-                soundQueue.push(5);
+            //turk qehvesi talis
+            if (data.giftId === 5994 || data.giftId  === 5303) {
+                // soundQueue.push(8);
+                playSpecificSound(8);
             }
 
-            // Check if any sound is currently playing
-            let isPlaying = false;
-            for (let i = 1; i <= 5; i++) {
-                if (!document.getElementById("sfx" + i).paused) {
-                    isPlaying = true;
-                    break;
-                }
+            //mikrofon yeraz
+            if (data.giftId === 5650) {
+                // soundQueue.push(9);
+                playSpecificSound(9);
             }
-
-            // If no sound is currently playing, start the next sound
-            if (!isPlaying && soundQueue.length > 0) {
-                playSound(soundQueue.shift());
+            
+            //stop all 
+            if (data.giftId === 6427 || data.giftId === 6104) {
+                // soundQueue.push(9);
+                pauseAllSounds();
             }
+ 
 
         }
 
@@ -117,38 +202,32 @@ connection.on('gift', (data) => {
             { text: "Geri dönüşleri çok iyi hemen takip et", language: "tr" },
             { text: " Desteğin için teşekkür ederiz", language: "tr" },
 
-    
+
         ];
-    
+
         messagesQueue = messagesQueue.filter(item => item.type !== 'random')
-    
+
         function getRandomMessage(messages) {
             const randomIndex = Math.floor(Math.random() * messages.length);
             return messages[randomIndex];
         }
         const randomMessage = getRandomMessage(messages);
-    
-    
+
+
         let end = { text: data.nickname + randomMessage.text, language: randomMessage.language, type: 'gift' }; // type ekle
-    
+
         if (!usernames.has(userName)) {
             messagesQueue.push(end);
             processQueue();
         }
-    
+
         lakaka1(userName);
     }
-    // If no sound is currently playing and there are sounds in the queue, start the next sound
-    if (soundQueue.length > 0) {
-        let firstAudioElement = document.getElementById("sfx" + soundQueue[0]);
-        if (firstAudioElement.paused) {
-            playSound(soundQueue.shift());
-        }
-    }
 
 
 
-   
+
+
 })
 
 
@@ -197,6 +276,46 @@ function isPendingStreak(data) {
 connection.on('streamEnd', () => {
     $('#stateText').text('Canlı sona çatdı.');
 })
+
+
+function lakaka1(username) {
+
+
+    // Eğer username zaten usernames Map'inde bulunuyorsa, işlemi sonlandır
+    if (usernames.has(username)) {
+        return;
+    }
+
+    // username'i usernames Map'ine ekle ve şu anki zamanı değer olarak ata
+    usernames.set(username, Date.now());
+
+    // 30 saniye sonra username'i kontrol et ve eğer süre geçtiyse usernames Map'inden çıkar
+    setTimeout(() => {
+        const timestamp = usernames.get(username);
+        if (Date.now() - timestamp >= 30000) {
+            usernames.delete(username);
+        }
+    }, 30000);
+
+    // ...
+    // Geri kalan gift fonksiyonu kodu
+    // ...
+}
+
+// Otomatik seslendirme başlatma
+window.addEventListener("load", async () => {
+    try {
+        // Kullanıcıdan otomatik seslendirmeye izin isteyin
+        const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        await audioContext.resume();
+
+
+    } catch (error) {
+        console.error("Otomatik seslendirme başlatılamadı:", error);
+    }
+});
+
+
 
 function addRandomMessage() {
     const messages = [
@@ -287,45 +406,6 @@ function addRandomMessage() {
     messagesQueue.push({ ...randomMessage, type: 'random' }); // type ekle
     processQueue();
 }
-
-
-function lakaka1(username) {
-
-
-    // Eğer username zaten usernames Map'inde bulunuyorsa, işlemi sonlandır
-    if (usernames.has(username)) {
-        return;
-    }
-
-    // username'i usernames Map'ine ekle ve şu anki zamanı değer olarak ata
-    usernames.set(username, Date.now());
-
-    // 30 saniye sonra username'i kontrol et ve eğer süre geçtiyse usernames Map'inden çıkar
-    setTimeout(() => {
-        const timestamp = usernames.get(username);
-        if (Date.now() - timestamp >= 30000) {
-            usernames.delete(username);
-        }
-    }, 30000);
-
-    // ...
-    // Geri kalan gift fonksiyonu kodu
-    // ...
-}
-
-// Otomatik seslendirme başlatma
-window.addEventListener("load", async () => {
-    try {
-        // Kullanıcıdan otomatik seslendirmeye izin isteyin
-        const audioContext = new (window.AudioContext || window.webkitAudioContext)();
-        await audioContext.resume();
-
-
-    } catch (error) {
-        console.error("Otomatik seslendirme başlatılamadı:", error);
-    }
-});
-
 
 setInterval(addRandomMessage, 20000);
 
