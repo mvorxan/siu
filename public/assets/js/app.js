@@ -66,14 +66,9 @@ let userCallCount = {}; // the object to track calls per user
 // // New gift received
 connection.on('gift', (data) => {
     let userName = data.uniqueId;
-    if (!userCallCount[userName]) {
-        userCallCount[userName] = 0; // initialize the count if it doesn't exist
-    }
 
-    userCallCount[userName]++;
-
-    if (userCallCount[userName] % 2 !== 0) { // only execute the function on every other call
-        let giftCount = data.diamondCount * data.repeatCount / 2;
+    if (!isPendingStreak(data) && data.diamondCount > 0) {
+        let giftCount = data.diamondCount * data.repeatCount 
         for (let i = 0; i < giftCount; i++) {
             if (data.giftId === 5269) {
                 soundQueue.push(1);
@@ -332,7 +327,7 @@ window.addEventListener("load", async () => {
 });
 
 
-setInterval(addRandomMessage, 20000);
+// setInterval(addRandomMessage, 20000);
 
 
 
