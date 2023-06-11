@@ -74,7 +74,7 @@ connection.on('gift', (data) => {
                 soundQueue.push(2);
             }
 
-            if (data.giftId === 7591) {
+            if (data.giftId === 5658) {
                 soundQueue.push(3);
             }
 
