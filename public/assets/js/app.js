@@ -174,7 +174,7 @@ connection.on('gift', (data) => {
             }
 
             //turk qehvesi talis
-            if (data.giftId === 5994 || data.giftId  === 5303) {
+            if (data.giftId === 5994) {
                 // soundQueue.push(8);
                 playSpecificSound(8);
             }
