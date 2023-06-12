@@ -79,7 +79,7 @@ let usernames = new Map();
 // START
 $(document).ready(() => {
     setTimeout(function () {
-        let targetLive = "magerramoff9";
+        let targetLive = "best.takipci";
         connect(targetLive);
     }, 5000);
 
