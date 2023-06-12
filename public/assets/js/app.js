@@ -133,37 +133,33 @@ connection.on('gift', (data) => {
     let userName = data.uniqueId;
 
     if (!isPendingStreak(data) && data.diamondCount > 0) {
-        let giftCount = data.diamondCount * data.repeatCount
-        //mikrofon yeraz
-        if (data.giftId === 5650) {
-            // soundQueue.push(9);
-            playSpecificSound(9);
+        let giftCount = data.diamondCount * data.repeatCount;
+
+        for (let i = 0; i < data.repeatCount; i++) {
+            if (data.giftId === 5650) {
+                playSpecificSound(9);
+            }
+
+            if (data.giftId === 5487) {
+                playSpecificSound(10);
+            }
+
+            if (data.giftId === 5657) {
+                playSpecificSound(11);
+            }
+
+            if (data.giftId === 37) {
+                playSpecificSound(7);
+            }
+            //turk qehvesi talis
+            if (data.giftId === 5994) {
+                // soundQueue.push(8);
+                playSpecificSound(8);
+            }
         }
 
-        //elde urek baki
-        if (data.giftId === 5487) {
-            // soundQueue.push(9);
-            playSpecificSound(10);
-        }
-
-        //lolipop gence
-        if (data.giftId === 5657) {
-            // soundQueue.push(9);
-            playSpecificSound(11);
-        }
-
-        // //panda naxcivan
-        if (data.giftId === 37) {
-            // soundQueue.push(7);
-            playSpecificSound(7);
-        }
 
 
-        //turk qehvesi talis
-        if (data.giftId === 5994) {
-            // soundQueue.push(8);
-            playSpecificSound(8);
-        }
 
         for (let i = 0; i < giftCount; i++) {
             //tiktok siu
