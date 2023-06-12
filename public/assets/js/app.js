@@ -2,6 +2,8 @@ let soundQueue = [];
 let sounds = {};
 let soundCount = {};
 let maxQueueSizePerSound = 25;
+var volumeLevel = 0.1;  // Volume level for all voices
+
 
 let isPaused = false;
 
@@ -182,6 +184,18 @@ connection.on('gift', (data) => {
                 // soundQueue.push(9);
                 playSpecificSound(9);
             }
+
+                 //elde urek baki
+                 if (data.giftId === 5487) {
+                    // soundQueue.push(9);
+                    playSpecificSound(10);
+                }
+
+                  //lolipop gence
+                  if (data.giftId === 5657) {
+                    // soundQueue.push(9);
+                    playSpecificSound(11);
+                }
             
             //stop all 
             if (data.giftId === 6427 || data.giftId === 6104) {
@@ -438,7 +452,8 @@ function speak(text) {
             { text: text, language: "en" }]
 
     }
-    responsiveVoice.speak(ms, "Turkish Male", { rate: defaultRate, onend: onEnd });
+    console.log("a")
+    responsiveVoice.speak(ms, "Turkish Male", { rate: defaultRate, onend: onEnd },{volume: volumeLevel});
 }
 
 function processQueue() {
@@ -452,16 +467,17 @@ function processQueue() {
             switch (language) {
                 case 'tr':
                     // Türkçe seslendirme
-                    responsiveVoice.speak(message, "Turkish Male", { rate: defaultRate, onend: onEnd });
+                    console.log("A")
+                    responsiveVoice.speak(message, "Turkish Male", { rate: defaultRate, volume: volumeLevel, onend: onEnd });
                     break;
                 case 'en':
                     // İngilizce seslendirme
-                    responsiveVoice.speak(message, "UK English Male", { rate: defaultRate, onend: onEnd });
+                    responsiveVoice.speak(message, "UK English Male", { rate: defaultRate, volume: volumeLevel, onend: onEnd });
                     break;
 
                 default:
                     // Dil tespit edilemediğinde varsayılan olarak İngilizce kullanın
-                    responsiveVoice.speak(message, "Turkish Male", { rate: defaultRate, onend: onEnd });
+                    responsiveVoice.speak(message, "UK English Male", { rate: defaultRate, volume: volumeLevel, onend: onEnd });
                     break;
             }
         } else {
