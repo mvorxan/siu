@@ -24,7 +24,7 @@ function resumeAllSounds() {
 
 
 window.onload = function () {
-    for (let i = 1; i <= 11; i++) {
+    for (let i = 1; i <= 13; i++) {
         let sound = document.getElementById(`sound${i}`);
         sound.onended = playNextSound;
         sounds[i] = sound;
@@ -201,7 +201,7 @@ connection.on('gift', (data) => {
 
 
             // //gg cole cox
-            if (data.giftId === 8286) {
+            if (data.giftId === 6064) {
                 // soundQueue.push(6);
                 playSpecificSound(12);
             }
@@ -210,6 +210,7 @@ connection.on('gift', (data) => {
 
             // //sari top eleme onu
             if (data.giftId === 6169) {
+                alert("sari")
                 // soundQueue.push(6);
                 playSpecificSound(13);
             }
