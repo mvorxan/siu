@@ -152,18 +152,18 @@ connection.on('gift', (data) => {
             playSpecificSound(11);
         }
 
-               // //panda naxcivan
-               if (data.giftId === 37) {
-                // soundQueue.push(7);
-                playSpecificSound(7);
-            }
+        // //panda naxcivan
+        if (data.giftId === 37) {
+            // soundQueue.push(7);
+            playSpecificSound(7);
+        }
 
 
-              //turk qehvesi talis
-              if (data.giftId === 5994) {
-                // soundQueue.push(8);
-                playSpecificSound(8);
-            }
+        //turk qehvesi talis
+        if (data.giftId === 5994) {
+            // soundQueue.push(8);
+            playSpecificSound(8);
+        }
 
         for (let i = 0; i < giftCount; i++) {
             //tiktok siu
@@ -198,9 +198,22 @@ connection.on('gift', (data) => {
                 // soundQueue.push(6);
                 playSpecificSound(6);
             }
-     
 
-          
+
+            // //gg cole cox
+            if (data.giftId === 8286) {
+                // soundQueue.push(6);
+                playSpecificSound(12);
+            }
+
+
+
+            // //sari top eleme onu
+            if (data.giftId === 6169) {
+                // soundQueue.push(6);
+                playSpecificSound(13);
+            }
+
 
             //stop all 
             if (data.giftId === 6427 || data.giftId === 6104) {
