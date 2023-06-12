@@ -24,7 +24,7 @@ function resumeAllSounds() {
 
 
 window.onload = function () {
-    for (let i = 1; i <= 13; i++) {
+    for (let i = 1; i <= 14; i++) {
         let sound = document.getElementById(`sound${i}`);
         sound.onended = playNextSound;
         sounds[i] = sound;
@@ -209,6 +209,12 @@ connection.on('gift', (data) => {
                 // soundQueue.push(6);
                 playSpecificSound(13);
             }
+
+                // //sari top eleme onu
+                if (data.giftId === 7934) {
+                    // soundQueue.push(6);
+                    playSpecificSound(14);
+                }
 
 
             //stop all 
