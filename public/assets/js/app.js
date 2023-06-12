@@ -1,7 +1,7 @@
 let soundQueue = [];
 let sounds = {};
 let soundCount = {};
-let maxQueueSizePerSound = 25;
+let maxQueueSizePerSound = 10;
 var volumeLevel = 0.1;  // Volume level for all voices
 
 
