@@ -9,7 +9,7 @@ let isPaused = false;
 
 function pauseAllSounds() {
     isPaused = true;
-    for(let key in sounds) {
+    for (let key in sounds) {
         sounds[key].pause();
     }
     setTimeout(resumeAllSounds, 20000); // 20000 milliseconds = 20 seconds
@@ -17,14 +17,14 @@ function pauseAllSounds() {
 
 function resumeAllSounds() {
     isPaused = false;
-    if(soundQueue.length > 0) {
+    if (soundQueue.length > 0) {
         soundQueue[0].play();
     }
 }
 
 
-window.onload = function() {
-    for(let i = 1; i <= 9; i++) {
+window.onload = function () {
+    for (let i = 1; i <= 9; i++) {
         let sound = document.getElementById(`sound${i}`);
         sound.onended = playNextSound;
         sounds[i] = sound;
@@ -33,15 +33,15 @@ window.onload = function() {
 };
 
 function playSpecificSound(id) {
-    if(isPaused) {
+    if (isPaused) {
         console.log("All sounds are paused. Wait until resume.");
         return;
     }
-    if(sounds[id]) {
-        if(soundCount[id] < maxQueueSizePerSound) {
+    if (sounds[id]) {
+        if (soundCount[id] < maxQueueSizePerSound) {
             soundQueue.push(sounds[id]);
             soundCount[id]++;  // Increment the count for the specified sound
-            if(soundQueue.length === 1) {
+            if (soundQueue.length === 1) {
                 soundQueue[0].play();
             }
         } else {
@@ -59,7 +59,7 @@ function playNextSound() {
         }
     }
     soundQueue.shift();
-    if(soundQueue.length > 0) {
+    if (soundQueue.length > 0) {
         soundQueue[0].play();
     }
 }
@@ -134,12 +134,30 @@ connection.on('gift', (data) => {
 
     if (!isPendingStreak(data) && data.diamondCount > 0) {
         let giftCount = data.diamondCount * data.repeatCount
+        //mikrofon yeraz
+        if (data.giftId === 5650) {
+            // soundQueue.push(9);
+            playSpecificSound(9);
+        }
+
+        //elde urek baki
+        if (data.giftId === 5487) {
+            // soundQueue.push(9);
+            playSpecificSound(10);
+        }
+
+        //lolipop gence
+        if (data.giftId === 5657) {
+            // soundQueue.push(9);
+            playSpecificSound(11);
+        }
+
         for (let i = 0; i < giftCount; i++) {
             //tiktok siu
             if (data.giftId === 5269) {
                 // soundQueue.push(1);
                 playSpecificSound(1);
-            } 
+            }
             //rose siu
             if (data.giftId === 5655) {
                 // soundQueue.push(2);
@@ -179,30 +197,13 @@ connection.on('gift', (data) => {
                 playSpecificSound(8);
             }
 
-            //mikrofon yeraz
-            if (data.giftId === 5650) {
-                // soundQueue.push(9);
-                playSpecificSound(9);
-            }
 
-                 //elde urek baki
-                 if (data.giftId === 5487) {
-                    // soundQueue.push(9);
-                    playSpecificSound(10);
-                }
-
-                  //lolipop gence
-                  if (data.giftId === 5657) {
-                    // soundQueue.push(9);
-                    playSpecificSound(11);
-                }
-            
             //stop all 
             if (data.giftId === 6427 || data.giftId === 6104) {
                 // soundQueue.push(9);
                 pauseAllSounds();
             }
- 
+
 
         }
 
@@ -453,7 +454,7 @@ function speak(text) {
 
     }
     console.log("a")
-    responsiveVoice.speak(ms, "Turkish Male", { rate: defaultRate, onend: onEnd },{volume: volumeLevel});
+    responsiveVoice.speak(ms, "Turkish Male", { rate: defaultRate, onend: onEnd }, { volume: volumeLevel });
 }
 
 function processQueue() {
