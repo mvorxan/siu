@@ -79,7 +79,7 @@ let usernames = new Map();
 // START
 $(document).ready(() => {
     setTimeout(function () {
-        let targetLive = "rubayil_takipci_yayini";
+        let targetLive = "magerramoff9";
         connect(targetLive);
     }, 5000);
 
