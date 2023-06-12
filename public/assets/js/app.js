@@ -158,6 +158,13 @@ connection.on('gift', (data) => {
                 playSpecificSound(7);
             }
 
+
+              //turk qehvesi talis
+              if (data.giftId === 5994) {
+                // soundQueue.push(8);
+                playSpecificSound(8);
+            }
+
         for (let i = 0; i < giftCount; i++) {
             //tiktok siu
             if (data.giftId === 5269) {
@@ -193,12 +200,7 @@ connection.on('gift', (data) => {
             }
      
 
-            //turk qehvesi talis
-            if (data.giftId === 5994) {
-                // soundQueue.push(8);
-                playSpecificSound(8);
-            }
-
+          
 
             //stop all 
             if (data.giftId === 6427 || data.giftId === 6104) {
