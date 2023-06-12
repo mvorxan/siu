@@ -24,7 +24,7 @@ function resumeAllSounds() {
 
 
 window.onload = function () {
-    for (let i = 1; i <= 9; i++) {
+    for (let i = 1; i <= 11; i++) {
         let sound = document.getElementById(`sound${i}`);
         sound.onended = playNextSound;
         sounds[i] = sound;
