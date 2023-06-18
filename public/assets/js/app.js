@@ -24,7 +24,7 @@ function resumeAllSounds() {
 
 
 window.onload = function () {
-    for (let i = 1; i <= 14; i++) {
+    for (let i = 1; i <= 18; i++) {
         let sound = document.getElementById(`sound${i}`);
         sound.onended = playNextSound;
         sounds[i] = sound;
@@ -156,6 +156,25 @@ connection.on('gift', (data) => {
                 // soundQueue.push(8);
                 playSpecificSound(8);
             }
+
+            //baliq qulagi geldime
+            if (data.giftId === 8352) {
+                // soundQueue.push(8);
+                playSpecificSound(16);
+            }
+
+
+            //parfum hu haha
+            if (data.giftId === 5658) {
+                // soundQueue.push(8);
+                playSpecificSound(17);
+            }
+
+            //ara usaqlari  el sallayan
+            if (data.giftId === 6059) {
+                // soundQueue.push(8);
+                playSpecificSound(18);
+            }
         }
 
 
@@ -210,11 +229,19 @@ connection.on('gift', (data) => {
                 playSpecificSound(13);
             }
 
-                // //sari top eleme onu
-                if (data.giftId === 7934) {
-                    // soundQueue.push(6);
-                    playSpecificSound(14);
-                }
+            // //sari top eleme onu
+            if (data.giftId === 7934) {
+                // soundQueue.push(6);
+                playSpecificSound(14);
+            }
+
+
+            // // dondurma  emele gelmez
+            if (data.giftId === 5827) {
+                // soundQueue.push(6);
+                playSpecificSound(15);
+            }
+
 
 
             //stop all 
