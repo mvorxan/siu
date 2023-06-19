@@ -178,11 +178,11 @@ connection.on('gift', (data) => {
                 playSpecificSound(18);
             }
 
-                 //pukti  sumqa
-                 if (data.giftId === 6052) {
-                    // soundQueue.push(8);
-                    playSpecificSound(19);
-                }
+            //pukti  sumqa
+            if (data.giftId === 6052) {
+                // soundQueue.push(8);
+                playSpecificSound(19);
+            }
         }
 
 
@@ -251,48 +251,48 @@ connection.on('gift', (data) => {
             }
 
 
-  //stop all 
-  if (data.giftId === 6427 || data.giftId === 6104) {
-    // soundQueue.push(9);
-    pauseAllSounds();
-}
+            //stop all 
+            if (data.giftId === 6427 || data.giftId === 6104) {
+                // soundQueue.push(9);
+                pauseAllSounds();
+            }
 
 
 
 
 
         }
-        if(isPaused) return;
-        const messages = [
-            { text: " adlı hesaba her kes takip atsın", language: "tr" },
-            { text: "Teşekkür ederim", language: "tr" },
-            { text: "Kendini gösteriyor, onu takip edin", language: "tr" },
-            { text: "Harikasın, toplu takip gönderin", language: "tr" },
-            { text: "Kesene bereket", language: "tr" },
-            { text: "Seni çok seviyorum ,Her kes hesabına takip atsin", language: "tr" },
-            { text: "Geri dönüşleri çok iyi hemen takip et", language: "tr" },
-            { text: " Desteğin için teşekkür ederiz", language: "tr" },
-
-
-        ];
-
-        messagesQueue = messagesQueue.filter(item => item.type !== 'random')
-
-        function getRandomMessage(messages) {
-            const randomIndex = Math.floor(Math.random() * messages.length);
-            return messages[randomIndex];
-        }
-        const randomMessage = getRandomMessage(messages);
-
-
-        let end = { text: data.nickname + randomMessage.text, language: randomMessage.language, type: 'gift' }; // type ekle
-
-        if (!usernames.has(userName)) {
-            messagesQueue.push(end);
-            processQueue();
-        }
-
-        lakaka1(userName);
+        if (isPaused) return;
+        setTimeout(() => {
+            const messages = [
+                { text: " adlı hesaba her kes takip atsın", language: "tr" },
+                { text: "Teşekkür ederim", language: "tr" },
+                { text: "Kendini gösteriyor, onu takip edin", language: "tr" },
+                { text: "Harikasın, toplu takip gönderin", language: "tr" },
+                { text: "Kesene bereket", language: "tr" },
+                { text: "Seni çok seviyorum ,Her kes hesabına takip atsin", language: "tr" },
+                { text: "Geri dönüşleri çok iyi hemen takip et", language: "tr" },
+                { text: " Desteğin için teşekkür ederiz", language: "tr" },
+            ];
+        
+            messagesQueue = messagesQueue.filter(item => item.type !== 'random')
+        
+            function getRandomMessage(messages) {
+                const randomIndex = Math.floor(Math.random() * messages.length);
+                return messages[randomIndex];
+            }
+            const randomMessage = getRandomMessage(messages);
+        
+            let end = { text: data.nickname + randomMessage.text, language: randomMessage.language, type: 'gift' };
+        
+            if (!usernames.has(userName)) {
+                messagesQueue.push(end);
+                processQueue();
+            }
+        
+            lakaka1(userName);
+        }, 2000); // 2 saniye sonrası için belirlenen süre
+        
     }
 
 
@@ -377,7 +377,7 @@ connection.on('like', (data) => {
     let userName = data.uniqueId;
     let likeCount = data.likeCount;
     let profilePictureUrl = data.profilePictureUrl;
-    if(isPaused) return;
+    if (isPaused) return;
     messagesQueue = messagesQueue.filter(item => item.type !== 'random');
     const messages = [
         { text: " yayımı beğendiğin için teşekkür ederim", language: "tr" },
@@ -422,7 +422,7 @@ window.addEventListener("load", async () => {
 
 
 function addRandomMessage() {
-    if(isPaused) return;  
+    if (isPaused) return;
     const messages = [
         { text: "İlk üçe gir ve takip al", language: "tr" },
         { text: "Hepinize Teşekkür ederim", language: "tr" },
