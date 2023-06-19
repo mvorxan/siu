@@ -81,7 +81,7 @@ let usernames = new Map();
 // START
 $(document).ready(() => {
     setTimeout(function () {
-        let targetLive = "best.takipci";
+        let targetLive = "oyun_aze";
         connect(targetLive);
     }, 5000);
 
@@ -251,12 +251,13 @@ connection.on('gift', (data) => {
             }
 
 
+  //stop all 
+  if (data.giftId === 6427 || data.giftId === 6104) {
+    // soundQueue.push(9);
+    pauseAllSounds();
+}
 
-              //stop all 
-              if (data.giftId === 6093) {
-                // soundQueue.push(9);
-                pauseAllSounds();
-            }
+
 
 
 
@@ -447,6 +448,7 @@ window.addEventListener("load", async () => {
 
 
 function addRandomMessage() {
+    if(isPaused) return;  
     const messages = [
         { text: "İlk üçe gir ve takip al", language: "tr" },
         { text: "Hepinize Teşekkür ederim", language: "tr" },
@@ -539,8 +541,6 @@ function addRandomMessage() {
 setInterval(addRandomMessage, 20000);
 
 
-
-
 function onEnd() {
     messagesQueue.shift();
     processQueue();
@@ -567,6 +567,7 @@ function speak(text) {
             { text: text, language: "en" }]
 
     }
+    console.log("a")
     responsiveVoice.speak(ms, "Turkish Male", { rate: defaultRate, onend: onEnd }, { volume: volumeLevel });
 }
 
