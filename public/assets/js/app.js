@@ -24,7 +24,7 @@ function resumeAllSounds() {
 
 
 window.onload = function () {
-    for (let i = 1; i <= 18; i++) {
+    for (let i = 1; i <= 19; i++) {
         let sound = document.getElementById(`sound${i}`);
         sound.onended = playNextSound;
         sounds[i] = sound;
@@ -92,7 +92,7 @@ function playSound(mode) {
     audioElement.onended = function () {
         // Check if any sound is currently playing
         let isPlaying = false;
-        for (let i = 1; i <= 5; i++) {
+        for (let i = 1; i <= 19; i++) {
             if (!document.getElementById("sfx" + i).paused) {
                 isPlaying = true;
                 break;
@@ -175,6 +175,12 @@ connection.on('gift', (data) => {
                 // soundQueue.push(8);
                 playSpecificSound(18);
             }
+
+                 //pukti  sumqa
+                 if (data.giftId === 6052) {
+                    // soundQueue.push(8);
+                    playSpecificSound(19);
+                }
         }
 
 
