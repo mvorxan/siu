@@ -302,40 +302,40 @@ connection.on('gift', (data) => {
 })
 
 
-connection.on('member', (data) => {
-    let userName = data.uniqueId;
-    let profilePictureUrl = data.profilePictureUrl;
+// connection.on('member', (data) => {
+//     let userName = data.uniqueId;
+//     let profilePictureUrl = data.profilePictureUrl;
 
-    if(isPaused) return;
-    messagesQueue = messagesQueue.filter(item => item.type !== 'random');
-
-
-    const messages = [
-        { text: " hoş geldin", language: "tr" },
-        { text: " Hoş geldin, Seni bekliyorduk", language: "tr" },
-        { text: " Hoş geldin ,Lütfen arkadaşlarını davet et", language: "tr" },
-        { text: " Hoş geldin , Seni Seviyoruz", language: "tr" },
+//     if(isPaused) return;
+//     messagesQueue = messagesQueue.filter(item => item.type !== 'random');
 
 
-        // { text: " welcome", language: "en" },
-    ];
-
-    function getRandomMessage(messages) {
-        const randomIndex = Math.floor(Math.random() * messages.length);
-        return messages[randomIndex];
-    }
-    const randomMessage = getRandomMessage(messages);
+//     const messages = [
+//         { text: " hoş geldin", language: "tr" },
+//         { text: " Hoş geldin, Seni bekliyorduk", language: "tr" },
+//         { text: " Hoş geldin ,Lütfen arkadaşlarını davet et", language: "tr" },
+//         { text: " Hoş geldin , Seni Seviyoruz", language: "tr" },
 
 
-    let end = { text: data.nickname + randomMessage.text, language: randomMessage.language, type: 'member' };
+//         // { text: " welcome", language: "en" },
+//     ];
 
-    if (!usernames.has(userName)) {
-        messagesQueue.push(end);
-        processQueue();
-    }
-    lakaka1(userName);
+//     function getRandomMessage(messages) {
+//         const randomIndex = Math.floor(Math.random() * messages.length);
+//         return messages[randomIndex];
+//     }
+//     const randomMessage = getRandomMessage(messages);
 
-})
+
+//     let end = { text: data.nickname + randomMessage.text, language: randomMessage.language, type: 'member' };
+
+//     if (!usernames.has(userName)) {
+//         messagesQueue.push(end);
+//         processQueue();
+//     }
+//     lakaka1(userName);
+
+// })
 
 
 
