@@ -567,7 +567,6 @@ function speak(text) {
             { text: text, language: "en" }]
 
     }
-    console.log("a")
     responsiveVoice.speak(ms, "Turkish Male", { rate: defaultRate, onend: onEnd }, { volume: volumeLevel });
 }
 
