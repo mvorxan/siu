@@ -9,6 +9,7 @@ let isPaused = false;
 
 function pauseAllSounds() {
     isPaused = true;
+    responsiveVoice.pause();
     for (let key in sounds) {
         sounds[key].pause();
     }
@@ -17,6 +18,7 @@ function pauseAllSounds() {
 
 function resumeAllSounds() {
     isPaused = false;
+    responsiveVoice.resume();
     if (soundQueue.length > 0) {
         soundQueue[0].play();
     }
@@ -79,7 +81,7 @@ let usernames = new Map();
 // START
 $(document).ready(() => {
     setTimeout(function () {
-        let targetLive = "oyun_aze";
+        let targetLive = "best.takipci";
         connect(targetLive);
     }, 5000);
 
@@ -250,15 +252,16 @@ connection.on('gift', (data) => {
 
 
 
-            //stop all 
-            if (data.giftId === 6427 || data.giftId === 6104) {
+              //stop all 
+              if (data.giftId === 6427 || data.giftId === 6104) {
                 // soundQueue.push(9);
                 pauseAllSounds();
             }
 
 
-        }
 
+        }
+        if(isPaused) return;
         const messages = [
             { text: " adlı hesaba her kes takip atsın", language: "tr" },
             { text: "Teşekkür ederim", language: "tr" },
@@ -302,7 +305,7 @@ connection.on('member', (data) => {
     let userName = data.uniqueId;
     let profilePictureUrl = data.profilePictureUrl;
 
-
+    if(isPaused) return;
     messagesQueue = messagesQueue.filter(item => item.type !== 'random');
 
 
@@ -368,7 +371,66 @@ function lakaka1(username) {
     // Geri kalan gift fonksiyonu kodu
     // ...
 }
+connection.on('like', (data) => {
 
+    let userName = data.uniqueId;
+    let likeCount = data.likeCount;
+    let profilePictureUrl = data.profilePictureUrl;
+    if(isPaused) return;
+    messagesQueue = messagesQueue.filter(item => item.type !== 'random');
+    const messages = [
+        { text: " yayımı beğendiğin içün teşekkür ederim", language: "tr" },
+        { text: " yayımı beğeniyor", language: "tr" },
+        { text: " Lütfen yayımı paylaş", language: "tr" },
+        { text: " Lütfen arkadaşlarını davet et", language: "tr" },
+        { text: " Seni seviyorum", language: "tr" },
+    ];
+
+    function getRandomMessage(messages) {
+        const randomIndex = Math.floor(Math.random() * messages.length);
+        return messages[randomIndex];
+    }
+    const randomMessage = getRandomMessage(messages);
+
+
+    let end = { text: data.nickname + randomMessage.text, language: randomMessage.language, type: 'like' };
+
+    if (!usernames.has(userName)) {
+        messagesQueue.push(end);
+        processQueue();
+    }
+    lakaka1(userName);
+})
+
+connection.on('member', (data) => {
+    if(isPaused) return;
+    let userName = data.uniqueId;
+    let profilePictureUrl = data.profilePictureUrl;
+
+    messagesQueue = messagesQueue.filter(item => item.type !== 'random');
+    const messages = [
+        { text: " hoş geldin", language: "tr" },
+        { text: " Hoş geldin, Seni bekliyorduk", language: "tr" },
+        { text: " Hoş geldin ,Lütfen arkadaşlarını davet et", language: "tr" },
+        { text: " Hoş geldin ,  Seni seviyorum", language: "tr" },
+    ];
+
+    function getRandomMessage(messages) {
+        const randomIndex = Math.floor(Math.random() * messages.length);
+        return messages[randomIndex];
+    }
+    const randomMessage = getRandomMessage(messages);
+
+
+    let end = { text: data.nickname + randomMessage.text, language: randomMessage.language, type: 'member' };
+
+    if (!usernames.has(userName)) {
+        messagesQueue.push(end);
+        processQueue();
+    }
+    lakaka1(userName);
+
+})
 // Otomatik seslendirme başlatma
 window.addEventListener("load", async () => {
     try {
