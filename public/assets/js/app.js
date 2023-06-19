@@ -253,7 +253,7 @@ connection.on('gift', (data) => {
 
 
               //stop all 
-              if (data.giftId === 6427 || data.giftId === 6104) {
+              if (data.giftId === 6093) {
                 // soundQueue.push(9);
                 pauseAllSounds();
             }
