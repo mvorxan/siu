@@ -327,6 +327,13 @@ connection.on('gift', (data) => {
 
 })
 
+connection.on('social', (data) => {
+    if (data.displayType === "pm_main_follow_message_viewer_2") {
+        playSpecificSound(22);
+    }
+});
+
+
 
 // connection.on('member', (data) => {
 //     let userName = data.uniqueId;
