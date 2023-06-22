@@ -26,7 +26,7 @@ function resumeAllSounds() {
 
 
 window.onload = function () {
-    for (let i = 1; i <= 19; i++) {
+    for (let i = 1; i <= 21; i++) {
         let sound = document.getElementById(`sound${i}`);
         sound.onended = playNextSound;
         sounds[i] = sound;
@@ -94,7 +94,7 @@ function playSound(mode) {
     audioElement.onended = function () {
         // Check if any sound is currently playing
         let isPlaying = false;
-        for (let i = 1; i <= 19; i++) {
+        for (let i = 1; i <= 21; i++) {
             if (!document.getElementById("sfx" + i).paused) {
                 isPlaying = true;
                 break;
@@ -138,118 +138,78 @@ connection.on('gift', (data) => {
         let giftCount = data.diamondCount * data.repeatCount;
 
         for (let i = 0; i < data.repeatCount; i++) {
-            if (data.giftId === 5650) {
-                playSpecificSound(9);
-            }
 
-            if (data.giftId === 5487) {
-                playSpecificSound(10);
-            }
 
-            if (data.giftId === 5657) {
-                playSpecificSound(11);
-            }
 
-            if (data.giftId === 37) {
-                playSpecificSound(7);
-            }
-            //turk qehvesi talis
-            if (data.giftId === 5994) {
-                // soundQueue.push(8);
-                playSpecificSound(8);
-            }
+
 
             //baliq qulagi geldime
             if (data.giftId === 8352) {
                 // soundQueue.push(8);
-                playSpecificSound(16);
+                playSpecificSound(11);
             }
 
 
-            //parfum hu haha
-            if (data.giftId === 5658) {
+
+            //turk qehvesi cay verersen
+            if (data.giftId === 5994) {
                 // soundQueue.push(8);
-                playSpecificSound(17);
+                playSpecificSound(12);
+            }
+
+
+            if (data.giftId === 37) {
+                //panda hara gelmisux
+                playSpecificSound(13);
+            }
+
+            //barmaq ucunda urek sumqayit 
+            if (data.giftId === 5487) {
+                playSpecificSound(14);
+            }
+
+
+
+            //microfon genceli
+
+            if (data.giftId === 5650) {
+                playSpecificSound(15);
             }
 
             //ara usaqlari  el sallayan
             if (data.giftId === 6059) {
                 // soundQueue.push(8);
+                playSpecificSound(16);
+            }
+
+
+            //pult  bakili
+            if (data.giftId === 6052) {
+                // soundQueue.push(8);
+                playSpecificSound(17);
+            }
+
+            //parfum talis
+            if (data.giftId === 5658) {
+                // soundQueue.push(8);
                 playSpecificSound(18);
             }
 
-            //pukti  sumqa
-            if (data.giftId === 6052) {
-                // soundQueue.push(8);
+            //sirinqus yeraz
+            if (data.giftId === 5657) {
                 playSpecificSound(19);
             }
-        }
 
-
-
-
-        for (let i = 0; i < giftCount; i++) {
-            //tiktok siu
-            if (data.giftId === 5269) {
-                // soundQueue.push(1);
-                playSpecificSound(1);
-            }
-            //rose siu
-            if (data.giftId === 5655) {
-                // soundQueue.push(2);
-                playSpecificSound(2);
-            }
-
-            // //top footbal 33
-            if (data.giftId === 6093) {
-                playSpecificSound(3);
-                // soundQueue.push(3);
-            }
-
-            // //qantel yaxsilar
-            if (data.giftId === 5760) {
-                // soundQueue.push(4);
-                playSpecificSound(4);
-            }
-            // //alov mujik
-            if (data.giftId === 5523 || data.giftId === 6793) {
-                // soundQueue.push(5);
-                playSpecificSound(5);
-            }
-            // //kalonka auye
-            if (data.giftId === 6042) {
-                // soundQueue.push(6);
-                playSpecificSound(6);
-            }
-
-
-            // //gg cole cox
-            if (data.giftId === 6064) {
-                // soundQueue.push(6);
-                playSpecificSound(12);
+            //bulku qarabag
+            if (data.giftId === 5657) {
+                playSpecificSound(20);
             }
 
 
 
-            // //sari top eleme onu
-            if (data.giftId === 6169) {
-                // soundQueue.push(6);
-                playSpecificSound(13);
+            if (data.giftId === 6582) {
+                playSpecificSound(21);
             }
-
-            // //sari top eleme onu
-            if (data.giftId === 7934) {
-                // soundQueue.push(6);
-                playSpecificSound(14);
-            }
-
-
-            // // dondurma  emele gelmez
-            if (data.giftId === 5827) {
-                // soundQueue.push(6);
-                playSpecificSound(15);
-            }
-
 
             //stop all 
             if (data.giftId === 6427 || data.giftId === 6104) {
@@ -257,8 +217,74 @@ connection.on('gift', (data) => {
                 pauseAllSounds();
             }
 
+        }
 
 
+
+
+        for (let i = 0; i < giftCount; i++) {
+
+            // // dondurma  emele gelmez
+            if (data.giftId === 5827) {
+                // soundQueue.push(6);
+                playSpecificSound(1);
+            }
+
+
+            // //sari top eleme onu
+            if (data.giftId === 6169) {
+                // soundQueue.push(6);
+                playSpecificSound(2);
+            }
+
+            // urek top eliyibler
+            if (data.giftId === 7934) {
+                // soundQueue.push(6);
+                playSpecificSound(3);
+            }
+
+            // //gg cole cox
+            if (data.giftId === 6064) {
+                // soundQueue.push(6);
+                playSpecificSound(4);
+            }
+
+            //tiktok siu
+            if (data.giftId === 5269) {
+                // soundQueue.push(1);
+                playSpecificSound(5);
+            }
+
+            //rose siu
+            if (data.giftId === 5655) {
+                // soundQueue.push(2);
+                playSpecificSound(6);
+            }
+
+            // //top footbal 33
+            if (data.giftId === 6093) {
+                playSpecificSound(7);
+                // soundQueue.push(3);
+            }
+
+
+            // //qantel qoyunlar
+            if (data.giftId === 5760) {
+                // soundQueue.push(4);
+                playSpecificSound(8);
+            }
+
+            // //alov mujik
+            if (data.giftId === 5523 || data.giftId === 6793) {
+                // soundQueue.push(5);
+                playSpecificSound(9);
+            }
+
+            // //kalonka auye
+            if (data.giftId === 6042) {
+                // soundQueue.push(6);
+                playSpecificSound(10);
+            }
 
 
         }
@@ -274,25 +300,25 @@ connection.on('gift', (data) => {
                 { text: "Geri dönüşleri çok iyi hemen takip et", language: "tr" },
                 { text: " Desteğin için teşekkür ederiz", language: "tr" },
             ];
-        
+
             messagesQueue = messagesQueue.filter(item => item.type !== 'random')
-        
+
             function getRandomMessage(messages) {
                 const randomIndex = Math.floor(Math.random() * messages.length);
                 return messages[randomIndex];
             }
             const randomMessage = getRandomMessage(messages);
-        
+
             let end = { text: data.nickname + randomMessage.text, language: randomMessage.language, type: 'gift' };
-        
+
             if (!usernames.has(userName)) {
                 messagesQueue.push(end);
                 processQueue();
             }
-        
+
             lakaka1(userName);
         }, 2000); // 2 saniye sonrası için belirlenen süre
-        
+
     }
 
 
