@@ -26,7 +26,7 @@ function resumeAllSounds() {
 
 
 window.onload = function () {
-    for (let i = 1; i <= 21; i++) {
+    for (let i = 1; i <= 22; i++) {
         let sound = document.getElementById(`sound${i}`);
         sound.onended = playNextSound;
         sounds[i] = sound;
@@ -94,7 +94,7 @@ function playSound(mode) {
     audioElement.onended = function () {
         // Check if any sound is currently playing
         let isPlaying = false;
-        for (let i = 1; i <= 21; i++) {
+        for (let i = 1; i <= 22; i++) {
             if (!document.getElementById("sfx" + i).paused) {
                 isPlaying = true;
                 break;
