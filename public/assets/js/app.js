@@ -200,16 +200,17 @@ connection.on('gift', (data) => {
                 playSpecificSound(19);
             }
 
-            //bulku qarabag
-            if (data.giftId === 5657) {
+       //bulku qarabag
+            if (data.giftId === 5879) {
                 playSpecificSound(20);
             }
 
 
-
-            if (data.giftId === 6582) {
+            //naxcivan pult
+            if (data.giftId === 6495) {
                 playSpecificSound(21);
             }
+
 
             //stop all 
             if (data.giftId === 6427 || data.giftId === 6104) {
