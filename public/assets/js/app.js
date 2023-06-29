@@ -81,7 +81,7 @@ let usernames = new Map();
 // START
 $(document).ready(() => {
     setTimeout(function () {
-        let targetLive = "slotaze";
+        let targetLive = "oyunaze";
         connect(targetLive);
     }, 5000);
 
