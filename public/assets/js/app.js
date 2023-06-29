@@ -26,7 +26,7 @@ function resumeAllSounds() {
 
 
 window.onload = function () {
-    for (let i = 1; i <= 22; i++) {
+    for (let i = 1; i <= 23; i++) {
         let sound = document.getElementById(`sound${i}`);
         sound.onended = playNextSound;
         sounds[i] = sound;
@@ -94,7 +94,7 @@ function playSound(mode) {
     audioElement.onended = function () {
         // Check if any sound is currently playing
         let isPlaying = false;
-        for (let i = 1; i <= 22; i++) {
+        for (let i = 1; i <= 23; i++) {
             if (!document.getElementById("sfx" + i).paused) {
                 isPlaying = true;
                 break;
@@ -406,12 +406,20 @@ function lakaka1(username) {
     // Geri kalan gift fonksiyonu kodu
     // ...
 }
+let previousLikeCount = 0;
+
 connection.on('like', (data) => {
 
     let userName = data.uniqueId;
     let likeCount = data.likeCount;
     let profilePictureUrl = data.profilePictureUrl;
+        let totalLikeCount = data.totalLikeCount;
     if (isPaused) return;
+
+       if(Math.floor(totalLikeCount / 1000) > Math.floor(previousLikeCount / 1000)) {
+        playSpecificSound(23);
+    }
+
     messagesQueue = messagesQueue.filter(item => item.type !== 'random');
     const messages = [
         { text: " yayımı beğendiğin için teşekkür ederim", language: "tr" },
