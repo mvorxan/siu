@@ -416,9 +416,11 @@ connection.on('like', (data) => {
         let totalLikeCount = data.totalLikeCount;
     if (isPaused) return;
 
-    //    if(Math.floor(totalLikeCount / 1000) > Math.floor(previousLikeCount / 1000)) {
-    //     playSpecificSound(23);
-    // }
+       if(Math.floor(totalLikeCount / 1000) > Math.floor(previousLikeCount / 1000)) {
+        playSpecificSound(23);
+    }
+
+       previousLikeCount = totalLikeCount;
 
     messagesQueue = messagesQueue.filter(item => item.type !== 'random');
     const messages = [
