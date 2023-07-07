@@ -488,23 +488,23 @@ function addRandomMessage() {
          { text: "Beşdir dörddür üçdür bu yaşamakdır aa?", language: "tr" },
          { text: "Bu mekmiredende güzeldi", language: "tr" },
          { text: "hayif sana eziyetim elşad", language: "tr" },
-          { text: "fehlelerüy fehleleri", language: "tr" },
+          { text: "fehleleriyük fehleleri", language: "tr" },
 
 
         { text: "Canlını paylaş", language: "tr" },
                   { text: "bahtiyar senin aşkındı?", language: "tr" },
 
-                  { text: "fehlelerüy fehleleri", language: "tr" },
+                  { text: "fehleleriyük fehleleri", language: "tr" },
 
         { text: "Bir birinize takip gönderin", language: "tr" },
-                  { text: "fehlelerüy fehleleri", language: "tr" },
+                  { text: "fehleleriyük fehleleri", language: "tr" },
 
         { text: "Arkadaşlarını davet eden her kese takip gönderin", language: "tr" },
-          { text: "kakaş kızlara patxot yapma", language: "tr" },
+          { text: "kakaş kızlara padhot yapma", language: "tr" },
                   { text: "bahtiyar senin aşkındı?", language: "tr" },
 
                  { text: "Sen kiminle dans oynadığının farkında değilsin", language: "tr" },
-          { text: "fehlelerüy fehleleri", language: "tr" },
+          { text: "fehleleriyük fehleleri", language: "tr" },
 
         { text: "Harikasınız", language: "tr" },
         { text: "Birlikte büyüyelim, beğen ve takip et", language: "tr" },
@@ -517,7 +517,7 @@ function addRandomMessage() {
            { text: "Allah beni cekican ele", language: "tr" },
 
                  { text: "Hoşqedem kaybolmuş", language: "tr" },
-                  { text: "fehlelerüy fehleleri", language: "tr" },
+                  { text: "fehleleriyük fehleleri", language: "tr" },
                      { text: "meşke telesiyorum", language: "tr" },
            { text: "Allah beni cekican ele", language: "tr" },
 
@@ -531,7 +531,7 @@ function addRandomMessage() {
                  { text: "Sen kiminle dans oynadığının farkında değilsin", language: "tr" },
 
         { text: "Yayımı paylaşanlara takip gönderin", language: "tr" },
-                { text: "kakaş kızlara patxot yapma", language: "tr" },
+                { text: "kakaş kızlara padhot yapma", language: "tr" },
                    { text: "Allah beni cekican ele", language: "tr" },
 
               { text: "Efini çok çığırtmayın", language: "tr" },
@@ -546,7 +546,7 @@ function addRandomMessage() {
         
         { text: "Pozitif enerjiyi sürdür, beğen ve takip et", language: "tr" },
         { text: "Birlikte daha güçlüyüz, destekle ve takip et", language: "tr" },
-                  { text: "fehlelerüy fehleleri", language: "tr" },
+                  { text: "fehleleriyük fehleleri", language: "tr" },
                    { text: "Allah beni cekican ele", language: "tr" },
 
                                  { text: "Nicat dedim besdideee", language: "tr" },
@@ -563,7 +563,7 @@ function addRandomMessage() {
                { text: "Efini üzmeyin", language: "tr" },
           { text: "bahtiyar senin aşkındı?", language: "tr" },
 
-                { text: "kakaş kızlara patxot yapma", language: "tr" },
+                { text: "kakaş kızlara padhot yapma", language: "tr" },
         { text: "Yeni arkadaşlar keşfet, takip et ve etkileşime gir", language: "tr" },
         { text: "Birbirimize ilham verelim, beğen ve takip et", language: "tr" },
                    { text: "Efini üzmeyin", language: "tr" },
@@ -583,7 +583,7 @@ function addRandomMessage() {
         { text: "Bir birinize takip gönderin", language: "tr" },
                   { text: "bahtiyar senin aşkındı?", language: "tr" },
 
-                { text: "kakaş kızlara patxot yapma", language: "tr" },
+                { text: "kakaş kızlara padhot yapma", language: "tr" },
         { text: "Hesabımı takip eden son on kişiyi takip et", language: "tr" },
                    { text: "Allah beni cekican ele", language: "tr" },
 
@@ -650,7 +650,7 @@ function addRandomMessage() {
                       { text: "Zakuzkani çok yeyen arkadaşlarınızı kırın", language: "tr" },
 
         { text: "Bir birinize takip gönderin", language: "tr" },
-                { text: "kakaş kızlara patxot yapma", language: "tr" },
+                { text: "kakaş kızlara padhot yapma", language: "tr" },
         
         { text: "Hesabımı takip eden son on kişiyi takip et", language: "tr" },
         { text: "Hoşqedem kaybolmuş", language: "tr" },
@@ -660,7 +660,7 @@ function addRandomMessage() {
                   { text: "meyveye değme", language: "tr" },
 
 
-                { text: "kakaş kızlara patxot yapma", language: "tr" },
+                { text: "kakaş kızlara padhot yapma", language: "tr" },
                  { text: "a bala siz yatmursuz?", language: "tr" },
         { text: "Arkadaşlarını davet eden her kese takip gönderin", language: "tr" },
                    { text: "Efini üzmeyin", language: "tr" },
