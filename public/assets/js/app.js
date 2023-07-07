@@ -470,84 +470,240 @@ function addRandomMessage() {
     const messages = [
         { text: "İlk üçe gir ve takip al", language: "tr" },
         { text: "Hepinize Teşekkür ederim", language: "tr" },
+                 { text: "hayif sana eziyetim elşad", language: "tr" },
+          { text: "bahtiyar senin aşkındı?", language: "tr" },
+          { text: "meyveye değme", language: "tr" },
+
         { text: "Bir birinize takip gönderin", language: "tr" },
+                 { text: "Bu mekmiredende güzeldi", language: "tr" },
+
         { text: "Canlını beğenen her kese takip gönderin", language: "tr" },
+        { text: "Göyde göy kurşağı Yerde Azerbaycan uşağı", language: "tr" },
+                  { text: "meyveye değme", language: "tr" },
+
         { text: "Arkadaşlarını davet eden her kese takip gönderin", language: "tr" },
+                 { text: "hayif sana eziyetim elşad", language: "tr" },
+
+        { text: "Efini çok çığırtmayın", language: "tr" },
+         { text: "Beşdir dörddür üçdür bu yaşamakdır aa?", language: "tr" },
+         { text: "Bu mekmiredende güzeldi", language: "tr" },
+         { text: "hayif sana eziyetim elşad", language: "tr" },
+          { text: "fehlelerüy fehleleri", language: "tr" },
 
 
         { text: "Canlını paylaş", language: "tr" },
-        { text: "Yorum yaz, karşılığında takip ederim", language: "tr" },
+                  { text: "bahtiyar senin aşkındı?", language: "tr" },
+
+                  { text: "fehlelerüy fehleleri", language: "tr" },
+
         { text: "Bir birinize takip gönderin", language: "tr" },
+                  { text: "fehlelerüy fehleleri", language: "tr" },
+
         { text: "Arkadaşlarını davet eden her kese takip gönderin", language: "tr" },
+          { text: "kakaş kızlara patxot yapma", language: "tr" },
+                  { text: "bahtiyar senin aşkındı?", language: "tr" },
+
+                 { text: "Sen kiminle dans oynadığının farkında değilsin", language: "tr" },
+          { text: "fehlelerüy fehleleri", language: "tr" },
 
         { text: "Harikasınız", language: "tr" },
         { text: "Birlikte büyüyelim, beğen ve takip et", language: "tr" },
-        { text: "Topluluğa katıl, takip et ve etkileşime gir", language: "tr" },
+              { text: "Efini çok çığırtmayın", language: "tr" },
         { text: "Beğen ve yorum yap, karşılığında takip ederim", language: "tr" },
         { text: "Bağlantıda kal, takip et ve paylaş", language: "tr" },
-        { text: "Güncellemeler için bildirimleri aç", language: "tr" },
         { text: "Bir birinize takip gönderin", language: "tr" },
+                 { text: "hayif sana eziyetim elşad", language: "tr" },
+                         { text: "Nicat dedim besdideee", language: "tr" },
+           { text: "Allah beni cekican ele", language: "tr" },
+
+                 { text: "Hoşqedem kaybolmuş", language: "tr" },
+                  { text: "fehlelerüy fehleleri", language: "tr" },
+                     { text: "meşke telesiyorum", language: "tr" },
+           { text: "Allah beni cekican ele", language: "tr" },
+
+          { text: "bahtiyar senin aşkındı?", language: "tr" },
+
         { text: "Hesabımı takip eden son on kişiyi takip et", language: "tr" },
-        { text: "Birlikte güçlüyüz", language: "tr" },
+             { text: "meşke telesiyorum", language: "tr" },
         { text: "Canlını beğenen her kese takip gönderin", language: "tr" },
+                 { text: "Beşdir dörddür üçdür bu yaşamakdır aa?", language: "tr" },
+         { text: "hayif sana eziyetim elşad", language: "tr" },
+                 { text: "Sen kiminle dans oynadığının farkında değilsin", language: "tr" },
+
         { text: "Yayımı paylaşanlara takip gönderin", language: "tr" },
+                { text: "kakaş kızlara patxot yapma", language: "tr" },
+                   { text: "Allah beni cekican ele", language: "tr" },
+
+              { text: "Efini çok çığırtmayın", language: "tr" },
         { text: "Arkadaşlarını davet eden her kese takip gönderin", language: "tr" },
 
         { text: "Müthişsiniz, teşekkürler", language: "tr" },
+                { text: "Benim rusiyada zadda ne işim var", language: "tr" },
+              { text: "Zakuzkani çok yeyen arkadaşlarınızı kırın", language: "tr" },
+                     { text: "meşke telesiyorum", language: "tr" },
+
+         { text: "Hoşqedem kaybolmuş", language: "tr" },
+        
         { text: "Pozitif enerjiyi sürdür, beğen ve takip et", language: "tr" },
         { text: "Birlikte daha güçlüyüz, destekle ve takip et", language: "tr" },
+                  { text: "fehlelerüy fehleleri", language: "tr" },
+                   { text: "Allah beni cekican ele", language: "tr" },
+
+                                 { text: "Nicat dedim besdideee", language: "tr" },
+
+
         { text: "Paylaşmak önemsemektir, takip et ve yeniden paylaş", language: "tr" },
         { text: "Daha fazla içerik için takipte kal", language: "tr" },
+                  { text: "bahtiyar senin aşkındı?", language: "tr" },
+                         { text: "Nicat dedim besdideee", language: "tr" },
+
+                        { text: "Benim rusiyada zadda ne işim var", language: "tr" },
+
+                      { text: "Zakuzkani çok yeyen arkadaşlarınızı kırın", language: "tr" },
+               { text: "Efini üzmeyin", language: "tr" },
+          { text: "bahtiyar senin aşkındı?", language: "tr" },
+
+                { text: "kakaş kızlara patxot yapma", language: "tr" },
         { text: "Yeni arkadaşlar keşfet, takip et ve etkileşime gir", language: "tr" },
         { text: "Birbirimize ilham verelim, beğen ve takip et", language: "tr" },
+                   { text: "Efini üzmeyin", language: "tr" },
+                   { text: "Allah beni cekican ele", language: "tr" },
+
+                     { text: "meşke telesiyorum", language: "tr" },
+
+                   { text: "a bala siz yatmursuz?", language: "tr" },
+                 { text: "Beşdir dörddür üçdür bu yaşamakdır aa?", language: "tr" },
+                        { text: "Benim rusiyada zadda ne işim var", language: "tr" },
+
+
+         { text: "Hoşqedem kaybolmuş", language: "tr" },
+                     { text: "meşke telesiyorum", language: "tr" },
+
         { text: "Özel içerik için takip et", language: "tr" },
         { text: "Bir birinize takip gönderin", language: "tr" },
+                  { text: "bahtiyar senin aşkındı?", language: "tr" },
+
+                { text: "kakaş kızlara patxot yapma", language: "tr" },
         { text: "Hesabımı takip eden son on kişiyi takip et", language: "tr" },
+                   { text: "Allah beni cekican ele", language: "tr" },
+
+                      { text: "Zakuzkani çok yeyen arkadaşlarınızı kırın", language: "tr" },
+         { text: "Bu mekmiredende güzeldi", language: "tr" },
+                 { text: "Sen kiminle dans oynadığının farkında değilsin", language: "tr" },
+          { text: "bahtiyar senin aşkındı?", language: "tr" },
+
+                 { text: "a bala siz yatmursuz?", language: "tr" },
         { text: "Birlikte güçlüyüz", language: "tr" },
+                                 { text: "Nicat dedim besdideee", language: "tr" },
+
         { text: "Yayımı paylaşanlara takip gönderin", language: "tr" },
         { text: "Arkadaşlarını davet eden her kese takip gönderin", language: "tr" },
+              { text: "Efini çok çığırtmayın", language: "tr" },
+                  { text: "Hoşqedem kaybolmuş", language: "tr" },
+                        { text: "Benim rusiyada zadda ne işim var", language: "tr" },
+         { text: "Hoşqedem kaybolmuş", language: "tr" },
+                   { text: "Efini üzmeyin", language: "tr" },
+                 { text: "Beşdir dörddür üçdür bu yaşamakdır aa?", language: "tr" },
+
+        
+                         { text: "Nicat dedim besdideee", language: "tr" },
 
         { text: "Beğeni bırak, takipçi kazan", language: "tr" },
+                        { text: "Benim rusiyada zadda ne işim var", language: "tr" },
+
         { text: "Harika işler çıkarmaya devam edin, teşekkürler", language: "tr" },
         { text: "Bağlan ve büyü, takip et ve destekle", language: "tr" },
         { text: "Bir birinize takip gönderin", language: "tr" },
+                     { text: "meşke telesiyorum", language: "tr" },
+                  { text: "meyveye değme", language: "tr" },
+
+
+                        { text: "Benim rusiyada zadda ne işim var", language: "tr" },
+
+         { text: "Beşdir dörddür üçdür bu yaşamakdır aa?", language: "tr" },
         { text: "Hesabımı takip eden son on kişiyi takip et", language: "tr" },
         { text: "Birlikte güçlüyüz", language: "tr" },
+                 { text: "a bala siz yatmursuz?", language: "tr" },
+         { text: "Hoşqedem kaybolmuş", language: "tr" },
+                        { text: "Benim rusiyada zadda ne işim var", language: "tr" },
+                  { text: "meyveye değme", language: "tr" },
+
+
         { text: "Canlını beğenen her kese takip gönderin", language: "tr" },
         { text: "Yayımı paylaşanlara takip gönderin", language: "tr" },
         { text: "Arkadaşlarını davet eden her kese takip gönderin", language: "tr" },
+              { text: "Efini çok çığırtmayın", language: "tr" },
+                  { text: "meyveye değme", language: "tr" },
+
+            { text: "Efini çok çığırtmayın", language: "tr" },
+                      { text: "Zakuzkani çok yeyen arkadaşlarınızı kırın", language: "tr" },
+         { text: "Bu mekmiredende güzeldi", language: "tr" },
+                 { text: "Sen kiminle dans oynadığının farkında değilsin", language: "tr" },
+
 
         { text: "Sohbete katıl, yorum yap ve takip et", language: "tr" },
         { text: "Yeni fikirler keşfet, takip et ve paylaş", language: "tr" },
         { text: "Güncel kal, takip et ve bildirimleri aç", language: "tr" },
+                  { text: "meyveye değme", language: "tr" },
+
         { text: "Takip et ve düşüncelerini paylaş", language: "tr" },
+                      { text: "Zakuzkani çok yeyen arkadaşlarınızı kırın", language: "tr" },
+
         { text: "Bir birinize takip gönderin", language: "tr" },
+                { text: "kakaş kızlara patxot yapma", language: "tr" },
+        
         { text: "Hesabımı takip eden son on kişiyi takip et", language: "tr" },
-        { text: "Birlikte güçlüyüz", language: "tr" },
+        { text: "Hoşqedem kaybolmuş", language: "tr" },
         { text: "Canlını beğenen her kese takip gönderin", language: "tr" },
         { text: "Yayımı paylaşanlara takip gönderin", language: "tr" },
+                 { text: "hayif sana eziyetim elşad", language: "tr" },
+                  { text: "meyveye değme", language: "tr" },
+
+
+                { text: "kakaş kızlara patxot yapma", language: "tr" },
+                 { text: "a bala siz yatmursuz?", language: "tr" },
         { text: "Arkadaşlarını davet eden her kese takip gönderin", language: "tr" },
+                   { text: "Efini üzmeyin", language: "tr" },
 
         { text: "Karşılıklı destek için beğen ve yorum yap", language: "tr" },
         { text: "Pozitif bir topluluk oluştur, takip et ve etkileşime gir", language: "tr" },
         { text: "Desteğiniz için teşekkür ederiz", language: "tr" },
+               { text: "Efini üzmeyin", language: "tr" },
         { text: "Lütfen yayımı beyenin", language: "tr" },
         { text: "Hesabımı takip eden son on kişiyi takip et", language: "tr" },
-        { text: "Birlikte güçlüyüz", language: "tr" },
+        { text: "Hoşqedem kaybolmuş", language: "tr" },
+                 { text: "a bala siz yatmursuz?", language: "tr" },
         { text: "Canlını beğenen her kese takip gönderin", language: "tr" },
         { text: "Yayımı paylaşanlara takip gönderin", language: "tr" },
-        { text: "Arkadaşlarını davet eden her kese takip gönderin", language: "tr" },
+                  { text: "meyveye değme", language: "tr" },
 
+        { text: "Arkadaşlarını davet eden her kese takip gönderin", language: "tr" },
+           { text: "Efini üzmeyin", language: "tr" },
         { text: "Sandık koy daha çok takipçi kazan", language: "tr" },
         { text: "Burada herkes takipçi kazanacak", language: "tr" },
         { text: "Mesaj yazanları takip edin", language: "tr" },
         { text: "Hesabımı takip eden son on kişiyi takip et", language: "tr" },
+                 { text: "Bu mekmiredende güzeldi", language: "tr" },
+                         { text: "Sen kiminle dans oynadığının farkında değilsin", language: "tr" },
+                         { text: "Nicat dedim besdideee", language: "tr" },
+
+
         { text: "Arkadaşlarını davet eden her kese takip gönderin", language: "tr" },
         { text: "Bir birinize takip gönderin", language: "tr" },
         { text: "Aktiv ol ve takipçi kazan", language: "tr" },
-        { text: "Birlikte güçlüyüz", language: "tr" },
+                   { text: "Efini çok çığırtmayın", language: "tr" },
+                                 { text: "Nicat dedim besdideee", language: "tr" },
+
+                 { text: "Sen kiminle dans oynadığının farkında değilsin", language: "tr" },
+                  { text: "meyveye değme", language: "tr" },
+
+
         { text: "Canlını beğenen her kese takip gönderin", language: "tr" },
         { text: "Yayımı paylaşanlara takip gönderin", language: "tr" },
+                                 { text: "Nicat dedim besdideee", language: "tr" },
+
+                 { text: "hayif sana eziyetim elşad", language: "tr" },
+
 
     ];
     const randomMessage = messages[Math.floor(Math.random() * messages.length)];
