@@ -225,7 +225,7 @@ connection.on('gift', (data) => {
 
         for (let i = 0; i < giftCount; i++) {
 
-            // // dondurma  emele gelmez
+           // // dondurma  emele gelmez
             if (data.giftId === 5827) {
                 // soundQueue.push(6);
                 playSpecificSound(1);
@@ -287,6 +287,23 @@ connection.on('gift', (data) => {
                 playSpecificSound(10);
             }
 
+             // //kalonka oba oba oba
+             if (data.giftId === 6603) {
+                // soundQueue.push(6);
+                playSpecificSound(24);
+            }
+
+             // //tgif bextiyar
+             if (data.giftId === 6592) {
+                // soundQueue.push(6);
+                playSpecificSound(25);
+            }
+
+             // //qucaqlayan hayif menim ezyetim
+             if (data.giftId === 8807) {
+                // soundQueue.push(6);
+                playSpecificSound(26);
+            }
 
         }
         if (isPaused) return;
