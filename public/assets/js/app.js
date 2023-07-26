@@ -26,7 +26,7 @@ function resumeAllSounds() {
 
 
 window.onload = function () {
-    for (let i = 1; i <= 45; i++) {
+    for (let i = 1; i <= 37; i++) {
         let sound = document.getElementById(`sound${i}`);
         sound.onended = playNextSound;
         sounds[i] = sound;
@@ -94,7 +94,7 @@ function playSound(mode) {
     audioElement.onended = function () {
         // Check if any sound is currently playing
         let isPlaying = false;
-        for (let i = 1; i <= 45; i++) {
+        for (let i = 1; i <= 37; i++) {
             if (!document.getElementById("sfx" + i).paused) {
                 isPlaying = true;
                 break;
@@ -124,7 +124,7 @@ function connect(targetLive) {
     } else {
         alert('İstifadəçi adını daxil et');
     }
-    
+
 }
 
 let sonSesCalmaZamani = {};
@@ -132,7 +132,7 @@ let sonSesCalmaZamani = {};
 connection.on('chat', async (data) => {
     let member = data.nickname;
     let lowerCaseComment = data.comment.toLowerCase();
-    
+
     // Şimdiki zamanı alıyoruz
     let simdi = new Date().getTime();
 
@@ -143,7 +143,7 @@ connection.on('chat', async (data) => {
     }
 
     if (lowerCaseComment.includes("fyp")) {
-        let numbers = [27,28,29,30,31,32,38,39,40];
+        let numbers = [27, 28, 29, 30, 31, 32, 33, 34, 35];
         let randomIndex = Math.floor(Math.random() * numbers.length);
         let randomNumber = numbers[randomIndex];
         playSpecificSound(randomNumber);
@@ -151,41 +151,21 @@ connection.on('chat', async (data) => {
         // Bu ses çalmanın zamanını kaydediyoruz
         sonSesCalmaZamani[member] = simdi;
     }
-    if (lowerCaseComment.includes("bantu")) {
-        let numbers2 = [35,44];
-        let randomIndex2 = Math.floor(Math.random() * numbers2.length);
-        let randomNumber2 = numbers2[randomIndex2];
-        playSpecificSound(randomNumber2);
 
-        sonSesCalmaZamani[member] = simdi;
-    }
-    if (lowerCaseComment.includes("up")) {
-        let numbers1 = [34,41,42,43];
-        let randomIndex1 = Math.floor(Math.random() * numbers1.length);
-        let randomNumber1 = numbers1[randomIndex1];
-        playSpecificSound(randomNumber1);
-
-        sonSesCalmaZamani[member] = simdi;
-    }
-        if (lowerCaseComment.includes("salam") || lowerCaseComment.includes("selam") || lowerCaseComment.includes("slm") ) {
+    if (lowerCaseComment.includes("salam") || lowerCaseComment.includes("selam") || lowerCaseComment.includes("slm")) {
 
         playSpecificSound(36);
 
         sonSesCalmaZamani[member] = simdi;
     }
-            if (lowerCaseComment.includes("necesen") || lowerCaseComment.includes("necəsən") || lowerCaseComment.includes("ncs")  || lowerCaseComment.includes("necesən")  || lowerCaseComment.includes("netersen")  || lowerCaseComment.includes("nətərsən")) {
+    if (lowerCaseComment.includes("necesen") || lowerCaseComment.includes("necəsən") || lowerCaseComment.includes("ncs") || lowerCaseComment.includes("necesən") || lowerCaseComment.includes("netersen") || lowerCaseComment.includes("nətərsən")) {
 
         playSpecificSound(37);
 
         sonSesCalmaZamani[member] = simdi;
     }
-           
-    if (lowerCaseComment.includes("fb")) {
 
-        playSpecificSound(45);
 
-        sonSesCalmaZamani[member] = simdi;
-    }
 });
 
 // New gift received
@@ -208,7 +188,7 @@ connection.on('gift', (data) => {
             //baliq qulagi geldime
             if (data.giftId === 8352) {
                 // soundQueue.push(8);
-                playSpecificSound(11);
+                playSpecificSound(13);
             }
 
 
@@ -216,18 +196,18 @@ connection.on('gift', (data) => {
             //turk qehvesi cay verersen
             if (data.giftId === 5994) {
                 // soundQueue.push(8);
-                playSpecificSound(12);
+                playSpecificSound(14);
             }
 
 
             if (data.giftId === 37) {
                 //panda hara gelmisux
-                playSpecificSound(13);
+                playSpecificSound(15);
             }
 
             //barmaq ucunda urek sumqayit 
             if (data.giftId === 5487) {
-                playSpecificSound(14);
+                playSpecificSound(16);
             }
 
 
@@ -235,42 +215,42 @@ connection.on('gift', (data) => {
             //microfon genceli
 
             if (data.giftId === 5650) {
-                playSpecificSound(15);
+                playSpecificSound(17);
             }
 
             //ara usaqlari  el sallayan
             if (data.giftId === 6059) {
                 // soundQueue.push(8);
-                playSpecificSound(16);
+                playSpecificSound(18);
             }
 
 
             //pult  bakili
             if (data.giftId === 6052) {
                 // soundQueue.push(8);
-                playSpecificSound(17);
+                playSpecificSound(19);
             }
 
             //sekil talis
             if (data.giftId === 8581) {
                 // soundQueue.push(8);
-                playSpecificSound(18);
+                playSpecificSound(20);
             }
 
             //sirinqus yeraz
             if (data.giftId === 5657) {
-                playSpecificSound(19);
+                playSpecificSound(21);
             }
 
-       //kalpak qarabag
+            //kalpak qarabag
             if (data.giftId === 6425) {
-                playSpecificSound(20);
+                playSpecificSound(22);
             }
 
 
             //naxcivan dino
             if (data.giftId === 6560) {
-                playSpecificSound(21);
+                playSpecificSound(23);
             }
 
 
@@ -349,22 +329,16 @@ connection.on('gift', (data) => {
                 playSpecificSound(10);
             }
 
-             // // bextiyar
-             if (data.giftId === 6603) {
+            // // bextiyar
+            if (data.giftId === 6603) {
                 // soundQueue.push(6);
-                playSpecificSound(25);
+                playSpecificSound(11);
             }
 
-            //  // //tgif bextiyar
-            //  if (data.giftId === 6592) {
-            //     // soundQueue.push(6);
-            //     playSpecificSound(25);
-            // }
-
-             // //qucaqlayan hayif menim ezyetim
-             if (data.giftId === 8807) {
+            // //qucaqlayan hayif menim ezyetim
+            if (data.giftId === 8807) {
                 // soundQueue.push(6);
-                playSpecificSound(26);
+                playSpecificSound(12);
             }
 
 
@@ -410,23 +384,23 @@ connection.on('gift', (data) => {
 let sonSesCalmaZamani1 = {};
 
 connection.on('social', (data) => {
-     let member = data.nickname;
-    
+    let member = data.nickname;
+
     // Şimdiki zamanı alıyoruz
     let simdi1 = new Date().getTime();
 
     if (data.displayType === "pm_main_follow_message_viewer_2") {
-        playSpecificSound(22);
+        playSpecificSound(24);
     }
 
-        // Kullanıcının son 20 saniye içinde bir ses çalıp çalmadığını kontrol ediyoruz
+    // Kullanıcının son 20 saniye içinde bir ses çalıp çalmadığını kontrol ediyoruz
     if (sonSesCalmaZamani1[member] && (simdi1 - sonSesCalmaZamani1[member] < 20000)) {
         // Eğer çaldıysa, bir ses çalmayı engelliyoruz
         return;
     }
-        if (data.displayType === "pm_mt_guidance_share") {
-        playSpecificSound(33);
-              // Bu ses çalmanın zamanını kaydediyoruz
+    if (data.displayType === "pm_mt_guidance_share") {
+        playSpecificSound(25);
+        // Bu ses çalmanın zamanını kaydediyoruz
         sonSesCalmaZamani1[member] = simdi1;
     }
 });
@@ -510,14 +484,14 @@ connection.on('like', (data) => {
     let userName = data.uniqueId;
     let likeCount = data.likeCount;
     let profilePictureUrl = data.profilePictureUrl;
-        let totalLikeCount = data.totalLikeCount;
+    let totalLikeCount = data.totalLikeCount;
     if (isPaused) return;
 
-       if(Math.floor(totalLikeCount / 1000) > Math.floor(previousLikeCount / 1000)) {
-        playSpecificSound(23);
+    if (Math.floor(totalLikeCount / 1000) > Math.floor(previousLikeCount / 1000)) {
+        playSpecificSound(26);
     }
 
-       previousLikeCount = totalLikeCount;
+    previousLikeCount = totalLikeCount;
 
     messagesQueue = messagesQueue.filter(item => item.type !== 'random');
     const messages = [
