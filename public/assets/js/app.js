@@ -81,7 +81,7 @@ let usernames = new Map();
 // START
 $(document).ready(() => {
     setTimeout(function () {
-        let targetLive = "spektraauto326";
+        let targetLive = "freecoinups";
         connect(targetLive);
     }, 5000);
 
