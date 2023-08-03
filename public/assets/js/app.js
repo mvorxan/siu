@@ -81,7 +81,7 @@ let usernames = new Map();
 // START
 $(document).ready(() => {
     setTimeout(function () {
-        let targetLive = "gamefulls";
+        let targetLive = "freecoinups";
         connect(targetLive);
     }, 5000);
 
