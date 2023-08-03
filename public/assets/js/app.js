@@ -26,7 +26,7 @@ function resumeAllSounds() {
 
 
 window.onload = function () {
-    for (let i = 1; i <= 45; i++) {
+    for (let i = 1; i <= 47; i++) {
         let sound = document.getElementById(`sound${i}`);
         sound.onended = playNextSound;
         sounds[i] = sound;
@@ -81,7 +81,7 @@ let usernames = new Map();
 // START
 $(document).ready(() => {
     setTimeout(function () {
-        let targetLive = "gamefulls";
+        let targetLive = "coingameaz";
         connect(targetLive);
     }, 5000);
 
@@ -94,7 +94,7 @@ function playSound(mode) {
     audioElement.onended = function () {
         // Check if any sound is currently playing
         let isPlaying = false;
-        for (let i = 1; i <= 45; i++) {
+        for (let i = 1; i <= 47; i++) {
             if (!document.getElementById("sfx" + i).paused) {
                 isPlaying = true;
                 break;
@@ -142,31 +142,31 @@ connection.on('chat', async (data) => {
         return;
     }
 
-    if (lowerCaseComment.includes("fyp")) {
-        let numbers = [27,28,29,30,31,32,38,39,40];
-        let randomIndex = Math.floor(Math.random() * numbers.length);
-        let randomNumber = numbers[randomIndex];
-        playSpecificSound(randomNumber);
+    // if (lowerCaseComment.includes("fyp")) {
+    //     let numbers = [27,28,29,30,31,32,38,39,40];
+    //     let randomIndex = Math.floor(Math.random() * numbers.length);
+    //     let randomNumber = numbers[randomIndex];
+    //     playSpecificSound(randomNumber);
 
-        // Bu ses çalmanın zamanını kaydediyoruz
-        sonSesCalmaZamani[member] = simdi;
-    }
-    if (lowerCaseComment.includes("bantu")) {
-        let numbers2 = [35,44];
-        let randomIndex2 = Math.floor(Math.random() * numbers2.length);
-        let randomNumber2 = numbers2[randomIndex2];
-        playSpecificSound(randomNumber2);
+    //     // Bu ses çalmanın zamanını kaydediyoruz
+    //     sonSesCalmaZamani[member] = simdi;
+    // }
+    // if (lowerCaseComment.includes("bantu")) {
+    //     let numbers2 = [35,44];
+    //     let randomIndex2 = Math.floor(Math.random() * numbers2.length);
+    //     let randomNumber2 = numbers2[randomIndex2];
+    //     playSpecificSound(randomNumber2);
 
-        sonSesCalmaZamani[member] = simdi;
-    }
-    if (lowerCaseComment.includes("up")) {
-        let numbers1 = [34,41,42,43];
-        let randomIndex1 = Math.floor(Math.random() * numbers1.length);
-        let randomNumber1 = numbers1[randomIndex1];
-        playSpecificSound(randomNumber1);
+    //     sonSesCalmaZamani[member] = simdi;
+    // }
+    // if (lowerCaseComment.includes("up")) {
+    //     let numbers1 = [34,41,42,43];
+    //     let randomIndex1 = Math.floor(Math.random() * numbers1.length);
+    //     let randomNumber1 = numbers1[randomIndex1];
+    //     playSpecificSound(randomNumber1);
 
-        sonSesCalmaZamani[member] = simdi;
-    }
+    //     sonSesCalmaZamani[member] = simdi;
+    // }
         if (lowerCaseComment.includes("salam") || lowerCaseComment.includes("selam") || lowerCaseComment.includes("slm") ) {
 
         playSpecificSound(36);
@@ -273,6 +273,11 @@ connection.on('gift', (data) => {
                 playSpecificSound(21);
             }
 
+             //resadddd ayaqqabi
+            if (data.giftId === 8890) {
+                playSpecificSound(47);
+            }
+
 
             //stop all 
             if (data.giftId === 6427 || data.giftId === 6104) {
@@ -365,6 +370,12 @@ connection.on('gift', (data) => {
              if (data.giftId === 8807) {
                 // soundQueue.push(6);
                 playSpecificSound(26);
+            }
+
+                       // qanad beynimi xarab eleme
+             if (data.giftId === 7616) {
+                // soundQueue.push(6);
+                playSpecificSound(46);
             }
 
 
