@@ -154,31 +154,31 @@ connection.on('chat', async (data) => {
         return;
     }
 
-    // if (lowerCaseComment.includes("fyp")) {
-    //     let numbers = [27,28,29,30,31,32,38,39,40];
-    //     let randomIndex = Math.floor(Math.random() * numbers.length);
-    //     let randomNumber = numbers[randomIndex];
-    //     playSpecificSound(randomNumber);
+    if (lowerCaseComment.includes("fyp")) {
+        let numbers = [27,28,29,30,31,32,38,39,40];
+        let randomIndex = Math.floor(Math.random() * numbers.length);
+        let randomNumber = numbers[randomIndex];
+        playSpecificSound(randomNumber);
 
-    //     // Bu ses çalmanın zamanını kaydediyoruz
-    //     sonSesCalmaZamani[member] = simdi;
-    // }
-    // if (lowerCaseComment.includes("bantu")) {
-    //     let numbers2 = [35,44];
-    //     let randomIndex2 = Math.floor(Math.random() * numbers2.length);
-    //     let randomNumber2 = numbers2[randomIndex2];
-    //     playSpecificSound(randomNumber2);
+        // Bu ses çalmanın zamanını kaydediyoruz
+        sonSesCalmaZamani[member] = simdi;
+    }
+    if (lowerCaseComment.includes("bantu")) {
+        let numbers2 = [35,44];
+        let randomIndex2 = Math.floor(Math.random() * numbers2.length);
+        let randomNumber2 = numbers2[randomIndex2];
+        playSpecificSound(randomNumber2);
 
-    //     sonSesCalmaZamani[member] = simdi;
-    // }
-    // if (lowerCaseComment.includes("up")) {
-    //     let numbers1 = [34,41,42,43];
-    //     let randomIndex1 = Math.floor(Math.random() * numbers1.length);
-    //     let randomNumber1 = numbers1[randomIndex1];
-    //     playSpecificSound(randomNumber1);
+        sonSesCalmaZamani[member] = simdi;
+    }
+    if (lowerCaseComment.includes("up")) {
+        let numbers1 = [34,41,42,43];
+        let randomIndex1 = Math.floor(Math.random() * numbers1.length);
+        let randomNumber1 = numbers1[randomIndex1];
+        playSpecificSound(randomNumber1);
 
-    //     sonSesCalmaZamani[member] = simdi;
-    // }
+        sonSesCalmaZamani[member] = simdi;
+    }
         if (lowerCaseComment.includes("salam") || lowerCaseComment.includes("selam") || lowerCaseComment.includes("slm") ) {
 
         playSpecificSound(36);
