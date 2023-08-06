@@ -34,26 +34,6 @@ window.onload = function () {
     }
 };
 
-let currentSound = null;
-
-function playNextSound() {
-    // Eğer ses kuyruğunda daha fazla ses varsa ve şu anda oynatılmayan bir ses yoksa
-    if (soundQueue.length > 0 && (!currentSound || currentSound.paused)) {
-        const nextSound = soundQueue.shift(); // Kuyruktan bir sonraki sesi al
-        nextSound.play(); // Sesi oynat
-        currentSound = nextSound; // Şu anda oynatılan sesi güncelle
-
-        // Eğer ses sona ererse, kuyrukta başka bir ses varsa oynamaya devam et
-        nextSound.addEventListener('ended', () => {
-            soundCount[nextSound.id]--; // Oynatılan sesin sayısını azalt
-            playNextSound(); // Sonraki sesi oynatmak için fonksiyonu tekrar çağır
-        });
-    }
-}
-
-// playSpecificSound fonksiyonu aynı kalır
-
-
 function playSpecificSound(id) {
     if (isPaused) {
         console.log("All sounds are paused. Wait until resume.");
@@ -62,13 +42,27 @@ function playSpecificSound(id) {
     if (sounds[id]) {
         if (soundCount[id] < maxQueueSizePerSound) {
             soundQueue.push(sounds[id]);
-            soundCount[id]++; // Increment the count for the specified sound
-            playNextSound(); // Kuyrukta bir sonraki sesi oynat (eğer gerekirse)
+            soundCount[id]++;  // Increment the count for the specified sound
+            if (soundQueue.length === 1) {
+                soundQueue[0].play();
+            }
         } else {
             console.log(`Maximum queue size for sound ${id} reached.`);
         }
     } else {
         console.log(`No sound with id ${id} exists.`);
+    }
+}
+
+function playNextSound() {
+    for (let id in soundCount) {
+        if (soundQueue[0] === sounds[id]) {
+            soundCount[id]--;  // Decrement the count for the sound that just finished playing
+        }
+    }
+    soundQueue.shift();
+    if (soundQueue.length > 0) {
+        soundQueue[0].play();
     }
 }
 
@@ -87,17 +81,11 @@ let usernames = new Map();
 // START
 $(document).ready(() => {
     setTimeout(function () {
-        let targetLive = "freecoinups";
+        let targetLive = "freecoinapp";
         connect(targetLive);
     }, 5000);
 
 })
-setInterval(() => {
-    if (currentSound && currentSound.paused) {
-        console.log('Sound was paused unexpectedly, restarting...');
-        playNextSound();
-    }
-}, 5000); // Her saniyede bir kontrol eder
 
 function playSound(mode) {
     var audioElement = document.getElementById("sfx" + mode);
@@ -140,6 +128,8 @@ function connect(targetLive) {
 }
 
 let sonSesCalmaZamani = {};
+
+
 
 connection.on('chat', async (data) => {
     let member = data.nickname;
@@ -199,6 +189,7 @@ connection.on('chat', async (data) => {
         sonSesCalmaZamani[member] = simdi;
     }
 });
+
 
 // New gift received
 let callCount = 0; // the counter variable
@@ -572,6 +563,7 @@ connection.on('like', (data) => {
 })
 // Otomatik seslendirme başlatma
 window.addEventListener("load", async () => {
+    console.log = function() {}
     try {
         // Kullanıcıdan otomatik seslendirmeye izin isteyin
         const audioContext = new (window.AudioContext || window.webkitAudioContext)();
