@@ -5,10 +5,8 @@ let maxQueueSizePerSound = 10;
 var volumeLevel = 0.1;  // Volume level for all voices
 
 
-let isPaused = false;
 
 function pauseAllSounds() {
-    isPaused = true;
     responsiveVoice.pause();
     for (let key in sounds) {
         sounds[key].pause();
@@ -17,7 +15,6 @@ function pauseAllSounds() {
 }
 
 function resumeAllSounds() {
-    isPaused = false;
     responsiveVoice.resume();
     if (soundQueue.length > 0) {
         soundQueue[0].play();
@@ -35,10 +32,7 @@ window.onload = function () {
 };
 
 function playSpecificSound(id) {
-    if (isPaused) {
-        console.log("All sounds are paused. Wait until resume.");
-        return;
-    }
+
     if (sounds[id]) {
         if (soundCount[id] < maxQueueSizePerSound) {
             soundQueue.push(sounds[id]);
@@ -282,11 +276,11 @@ connection.on('gift', (data) => {
             }
 
 
-            //stop all 
-            if (data.giftId === 6427 || data.giftId === 6104) {
-                // soundQueue.push(9);
-                pauseAllSounds();
-            }
+            // //stop all 
+            // if (data.giftId === 6427 || data.giftId === 6104) {
+            //     // soundQueue.push(9);
+            //     pauseAllSounds();
+            // }
 
         }
 
@@ -383,7 +377,6 @@ connection.on('gift', (data) => {
 
 
         }
-        if (isPaused) return;
         setTimeout(() => {
             const messages = [
                 { text: " adlı hesaba her kes takip atsın", language: "tr" },
@@ -525,7 +518,6 @@ connection.on('like', (data) => {
     let likeCount = data.likeCount;
     let profilePictureUrl = data.profilePictureUrl;
         let totalLikeCount = data.totalLikeCount;
-    if (isPaused) return;
 
        if(Math.floor(totalLikeCount / 1000) > Math.floor(previousLikeCount / 1000)) {
         playSpecificSound(23);
@@ -578,7 +570,6 @@ window.addEventListener("load", async () => {
 
 
 function addRandomMessage() {
-    if (isPaused) return;
     const messages = [
         { text: "İlk üçe gir ve takip al", language: "tr" },
         { text: "Hepinize Teşekkür ederim", language: "tr" },
