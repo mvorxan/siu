@@ -176,12 +176,12 @@ connection.on('chat', async (data) => {
         sonSesCalmaZamani[member] = simdi;
     }
            
-    if (lowerCaseComment.includes("fb")) {
+    // if (lowerCaseComment.includes("fb")) {
 
-        playSpecificSound(45);
+    //     playSpecificSound(45);
 
-        sonSesCalmaZamani[member] = simdi;
-    }
+    //     sonSesCalmaZamani[member] = simdi;
+    // }
 });
 
 
