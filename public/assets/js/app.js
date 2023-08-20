@@ -75,7 +75,7 @@ let usernames = new Map();
 // START
 $(document).ready(() => {
     setTimeout(function () {
-        let targetLive = "freecoinapp";
+        let targetLive = "24.11.2007_";
         connect(targetLive);
     }, 5000);
 
