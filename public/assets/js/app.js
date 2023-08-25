@@ -339,7 +339,7 @@ connection.on('gift', (data) => {
                 playSpecificSound(8);
             }
 
-            // //alov mujik
+            // // mikiiii
             if (data.giftId === 5523 || data.giftId === 6793) {
                 // soundQueue.push(5);
                 playSpecificSound(9);
