@@ -75,7 +75,7 @@ let usernames = new Map();
 // START
 $(document).ready(() => {
     setTimeout(function () {
-        let targetLive = "mirt_ses";
+        let targetLive = "freecoinapp";
         connect(targetLive);
     }, 5000);
 
@@ -122,8 +122,6 @@ function connect(targetLive) {
 }
 
 let sonSesCalmaZamani = {};
-
-
 
 connection.on('chat', async (data) => {
     let member = data.nickname;
@@ -175,13 +173,6 @@ connection.on('chat', async (data) => {
 
         sonSesCalmaZamani[member] = simdi;
     }
-           
-    // if (lowerCaseComment.includes("fb")) {
-
-    //     playSpecificSound(45);
-
-    //     sonSesCalmaZamani[member] = simdi;
-    // }
 });
 
 
@@ -198,25 +189,18 @@ connection.on('gift', (data) => {
 
         for (let i = 0; i < data.repeatCount; i++) {
 
-
-
-
-
             //baliq qulagi geldime
             if (data.giftId === 8352) {
                 // soundQueue.push(8);
                 playSpecificSound(11);
             }
 
-
-
             //turk qehvesi cay verersen
             if (data.giftId === 5994) {
                 // soundQueue.push(8);
                 playSpecificSound(12);
             }
-
-
+            
             if (data.giftId === 37) {
                 //panda hara gelmisux
                 playSpecificSound(13);
@@ -226,9 +210,7 @@ connection.on('gift', (data) => {
             if (data.giftId === 5487) {
                 playSpecificSound(14);
             }
-
-
-
+            
             //microfon genceli
 
             if (data.giftId === 5650) {
@@ -241,8 +223,7 @@ connection.on('gift', (data) => {
                 playSpecificSound(16);
             }
 
-
-            //pult  bakili
+            //pult  bakili 
             if (data.giftId === 6052) {
                 // soundQueue.push(8);
                 playSpecificSound(17);
@@ -259,11 +240,10 @@ connection.on('gift', (data) => {
                 playSpecificSound(19);
             }
 
-       //kalpak qarabag
+           //kalpak qarabag
             if (data.giftId === 6425) {
                 playSpecificSound(20);
             }
-
 
             //naxcivan dino
             if (data.giftId === 6560) {
@@ -279,14 +259,12 @@ connection.on('gift', (data) => {
             // //stop all 
             // if (data.giftId === 6427 || data.giftId === 6104) {
             //     // soundQueue.push(9);
-            //     pauseAllSounds();
+            //     pauseAllSounds();ş
             // }
 
         }
 
-
-
-
+        
         for (let i = 0; i < giftCount; i++) {
 
             // // dondurma  emele gelmez
@@ -294,7 +272,6 @@ connection.on('gift', (data) => {
                 // soundQueue.push(6);
                 playSpecificSound(1);
             }
-
 
             // //sari top eleme onu
             if (data.giftId === 9111) {
