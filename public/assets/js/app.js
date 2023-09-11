@@ -2,6 +2,7 @@ let soundQueue = [];
 let sounds = {};
 let soundCount = {};
 let maxQueueSizePerSound = 10;
+let retryInterval = 5000; // 5 saniye sonra yeniden deneme süresi
 var volumeLevel = 0.1;  // Volume level for all voices
 
 
