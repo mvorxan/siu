@@ -32,21 +32,25 @@ window.onload = function () {
 };
 
 function playSpecificSound(id) {
-
-    if (sounds[id]) {
-        if (soundCount[id] < maxQueueSizePerSound) {
-            soundQueue.push(sounds[id]);
-            soundCount[id]++;  // Increment the count for the specified sound
-            if (soundQueue.length === 1) {
-                soundQueue[0].play();
+    try {
+        if (sounds[id]) {
+            if (soundCount[id] < maxQueueSizePerSound) {
+                soundQueue.push(sounds[id]);
+                soundCount[id]++;  // Increment the count for the specified sound
+                if (soundQueue.length === 1) {
+                    soundQueue[0].play();
+                }
+            } else {
+                console.log(`Maximum queue size for sound ${id} reached.`);
             }
         } else {
-            console.log(`Maximum queue size for sound ${id} reached.`);
+            console.log(`No sound with id ${id} exists.`);
         }
-    } else {
-        console.log(`No sound with id ${id} exists.`);
+    } catch (error) {
+        console.error("An error occurred in playSpecificSound:", error);
     }
 }
+
 
 function playNextSound() {
     for (let id in soundCount) {
@@ -75,7 +79,7 @@ let usernames = new Map();
 // START
 $(document).ready(() => {
     setTimeout(function () {
-        let targetLive = "freecoinapp";
+        let targetLive = "kefli_adam";
         connect(targetLive);
     }, 5000);
 
@@ -754,7 +758,6 @@ function processQueue() {
             switch (language) {
                 case 'tr':
                     // Türkçe seslendirme
-                    console.log("A")
                     responsiveVoice.speak(message, "Turkish Male", { rate: defaultRate, volume: volumeLevel, onend: onEnd });
                     break;
                 case 'en':
