@@ -83,7 +83,7 @@ let usernames = new Map();
 // START
 $(document).ready(() => {
     setTimeout(function () {
-        let targetLive = "freecoinapp";
+        let targetLive = "coingameaz";
         connect(targetLive);
     }, 5000);
 
