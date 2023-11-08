@@ -349,7 +349,7 @@ playSpecificSound(47);
              // //sari top eleme onu
             if (data.giftId === 8913) {
                 // soundQueue.push(6);
-                playSpecificSound(3);
+                playSpecificSound(7);
             }
 
             // //sari top eleme onu
