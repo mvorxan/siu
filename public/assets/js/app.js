@@ -347,7 +347,7 @@ playSpecificSound(47);
             }
 
             // //sari top eleme onu
-            if (data.giftId === 8913) {
+            if (data.giftId === 9111) {
                 // soundQueue.push(6);
                 playSpecificSound(2);
             }
