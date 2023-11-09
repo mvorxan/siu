@@ -258,13 +258,13 @@ connection.on('gift', (data) => {
            //kalpak qarabag
             if (data.giftId === 6425) {
                 
-                playSpecificSound(20);
+                playSpecificSound(26);
             }
 
             //naxcivan dino
             if (data.giftId === 6560) {
                 
-                playSpecificSound(21);
+                playSpecificSound(46);
             }
 
              //resadddd ayaqqabi
